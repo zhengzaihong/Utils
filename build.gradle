@@ -1,0 +1,34 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.1.61'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.5.0'//添加
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+//非常重要要不它不认识你的项目.kt文件名 其中airpurgeview是你的library名
+tasks.getByPath(":collectionutils:releaseAndroidJavadocs").enabled = false
+/*
+语法
+tasks.getByPath(":需要升级的module:bintrayUpload").enabled = true
+tasks.getByPath(":不需要升级的module:bintrayUpload").enabled = false*/
