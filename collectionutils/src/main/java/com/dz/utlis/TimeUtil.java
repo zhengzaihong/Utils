@@ -10,8 +10,16 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+
+/**
+ * creat_user: zhengzaihong
+ * Email:1096877329@qq.com
+ * creat_date: 2018/6/12
+ * creat_time: 9:53
+ * describe 时间工具类
+ **/
 @SuppressWarnings("all")
-public class DateFormatUtil {
+public class TimeUtil {
 
     /**
      * @param time1
@@ -76,7 +84,7 @@ public class DateFormatUtil {
 
     // 返回几天后的时间戳
     public static String getAfterDayTimeStamp(String patten, int i) {
-        return DateFormatUtil.transForMilliSecond(getSpecifiedDayAfter(cstToYmd(new Date().toString()), patten, i), "yyyy-MM-dd").toString();
+        return TimeUtil.transForMilliSecond(getSpecifiedDayAfter(cstToYmd(new Date().toString()), patten, i), "yyyy-MM-dd").toString();
     }
 
     public static String cstToYmd(String dateStr) {
@@ -373,32 +381,34 @@ public class DateFormatUtil {
     }
 
 
-    /**判断开始和结束时间是否属于今天
+    /**
+     * 判断开始和结束时间是否属于今天
+     *
      * @param starttime 开始时间
-     * @param endtime 结束时间
+     * @param endtime   结束时间
      * @return
      */
-    public static boolean isToday(long starttime,long endtime){
+    public static boolean isToday(long starttime, long endtime) {
         try {
-            boolean b1=false;
-            boolean b2=false;
+            boolean b1 = false;
+            boolean b2 = false;
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Calendar now = Calendar.getInstance();
-            long ms  = 1000*(now.get(Calendar.HOUR_OF_DAY)*3600+now.get(Calendar.MINUTE)*60+now.get(Calendar.SECOND));//毫秒数
+            long ms = 1000 * (now.get(Calendar.HOUR_OF_DAY) * 3600 + now.get(Calendar.MINUTE) * 60 + now.get(Calendar.SECOND));//毫秒数
             long ms_now = now.getTimeInMillis();
-            if(ms_now-starttime<ms){
-                b1=true;
+            if (ms_now - starttime < ms) {
+                b1 = true;
             }
-            if(ms_now-endtime<ms)
-            {
-                b2=true;
+            if (ms_now - endtime < ms) {
+                b2 = true;
             }
-            return b1&b2;
+            return b1 & b2;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
     }
+
     /**
      * 日期转时间戳
      *
@@ -426,8 +436,8 @@ public class DateFormatUtil {
      * @return
      */
     public static Integer transForMilliSecond(String dateStr) {
-        Date date = DateFormatUtil.formatDate(dateStr);
-        return date == null ? null : DateFormatUtil.transForMilliSecond(date);
+        Date date = TimeUtil.formatDate(dateStr);
+        return date == null ? null : TimeUtil.transForMilliSecond(date);
     }
 
     /**
@@ -437,8 +447,8 @@ public class DateFormatUtil {
      * @return
      */
     public static Integer transForMilliSecond(String dateStr, String format) {
-        Date date = DateFormatUtil.formatDate(dateStr, format);
-        return date == null ? null : DateFormatUtil.transForMilliSecond(date);
+        Date date = TimeUtil.formatDate(dateStr, format);
+        return date == null ? null : TimeUtil.transForMilliSecond(date);
     }
 
     /**
@@ -456,7 +466,7 @@ public class DateFormatUtil {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return date == null ? null : DateFormatUtil.transForMilliSecond(date);
+        return date == null ? null : TimeUtil.transForMilliSecond(date);
     }
 
     /**
@@ -522,6 +532,7 @@ public class DateFormatUtil {
 
     /**
      * 获取某周的第一天日期
+     *
      * @param week 0 当周 1 上一周 -1 下一周
      * @return
      */
@@ -561,6 +572,7 @@ public class DateFormatUtil {
 
     /**
      * 发表文章几小时前之类
+     *
      * @param time
      * @return
      */
@@ -655,6 +667,7 @@ public class DateFormatUtil {
 
     /**
      * 日期转字符串 yyyy-MM-dd HH:mm:ss
+     *
      * @param date
      * @return
      */

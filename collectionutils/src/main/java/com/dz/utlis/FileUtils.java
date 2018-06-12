@@ -29,7 +29,7 @@ import java.util.List;
 * Email:1096877329@qq.com
 * creat_date: 2018/5/25
 * creat_time: 16:31
-* describe
+* describe 常用文件处理
 **/
 public class FileUtils {
 

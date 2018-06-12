@@ -1,2 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dz.utlis" />
+    package="com.dz.utlis" >
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+</manifest>

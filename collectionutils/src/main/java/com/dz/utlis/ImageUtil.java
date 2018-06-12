@@ -28,10 +28,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-
+/**
+* creat_user: zhengzaihong 
+* Email:1096877329@qq.com
+* creat_date: 2017/6/12
+* creat_time: 9:31
+* describe 图片处理工具
+**/
 @SuppressWarnings("all")
 public class ImageUtil {
-
 
     /**
      * 将一个bitmap 压缩到不超过maxkb大小

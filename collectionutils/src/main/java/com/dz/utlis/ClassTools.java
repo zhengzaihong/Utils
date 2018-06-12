@@ -39,4 +39,5 @@ public class ClassTools {
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         mContext.startActivity(intent);
     }
+
 }

@@ -20,6 +20,8 @@ import java.util.Map;
  **/
 public class JavaUtils {
 
+    public static boolean isdebug = false;
+
     /**
      * @param list
      * @return 将字符数集合转数组
@@ -36,9 +38,9 @@ public class JavaUtils {
      * @param s // 打印输出
      */
     public static void outPrint(String s) {
-        System.out.println("输出信息:" + s);
+        if (isdebug)
+            System.out.println("输出信息:" + s);
     }
-
 
     /**
      * @param jsonString json字符串
@@ -63,34 +65,36 @@ public class JavaUtils {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
         return valueMap;
     }
 
 
-    /**判断单个字符串是否为空
+    /**
+     * 判断单个字符串是否为空
+     *
      * @param str
      * @return true:字符串为空
      */
-    public static boolean isEmpty(String str)
-    {
+    public static boolean isEmpty(String str) {
         return StringUtils.isEmpty(str);
     }
-    /**判断多个字符是否是空
+
+    /**
+     * 判断多个字符是否是空
+     *
      * @param strs
      * @return true:所有字符不为空
      */
-    public static boolean isEmpty(String...strs)
-    {
-        List<Boolean> booleans=new ArrayList<Boolean>();
-        for (int i = 0; i < strs.length; i++)
-        {
+    public static boolean isEmpty(String... strs) {
+        List<Boolean> booleans = new ArrayList<Boolean>();
+        for (int i = 0; i < strs.length; i++) {
             booleans.add(isEmpty(strs[i]));
         }
-        int index=booleans.indexOf(false);
-        return index==-1;
+        int index = booleans.indexOf(false);
+        return index == -1;
     }
+
     /**
      * @return 返回中间部分被隐藏的字符串
      */
@@ -133,12 +137,6 @@ public class JavaUtils {
      * @return
      */
     public static boolean justisAz(String str) {
-        String reg = "^[a-zA-Z]*$";
-        boolean isCract = str.matches(reg);
-        return isCract;
-    }
-
-    public static boolean justisAz1(String str) {
         String reg = "^[a-zA-Z\\s]*$";
         boolean isCract = str.matches(reg);
         return isCract;
@@ -165,7 +163,6 @@ public class JavaUtils {
     }
 
 
-
     /**
      * 判断一个对象是不是Null
      */
@@ -177,46 +174,44 @@ public class JavaUtils {
 
     /**
      * 将数字转化汉字显示
+     *
      * @param input
      * @return
      */
     public static String getChinese(String input) {
-        String[] num=new String[] {"零","一","二","三","四","五","六","七","八","九"};
-        String[] unit=new String[]{"","十","百","千","万","亿"};
-        String[] mid=new String[input.length()];
-        String output="";
+        String[] num = new String[]{"零", "一", "二", "三", "四", "五", "六", "七", "八", "九"};
+        String[] unit = new String[]{"", "十", "百", "千", "万", "亿"};
+        String[] mid = new String[input.length()];
+        String output = "";
 
-        for (int i=0; i<input.length(); i++) {
-            mid[i]=num[Integer.parseInt(""+input.charAt(i))];
-            output+=mid[i];
+        for (int i = 0; i < input.length(); i++) {
+            mid[i] = num[Integer.parseInt("" + input.charAt(i))];
+            output += mid[i];
         }
 
-        String str="";
-        String result="";
-        for (int i=0; i<output.length(); i++) {
-            if (output.length()-i-1==0) {
-                str=""+output.charAt(i);
+        String str = "";
+        String result = "";
+        for (int i = 0; i < output.length(); i++) {
+            if (output.length() - i - 1 == 0) {
+                str = "" + output.charAt(i);
+            } else if ((output.length() - i - 1 + 4) % 8 == 0) {
+                str = output.charAt(i) + unit[4];
+            } else if ((output.length() - i - 1) % 8 == 0) {
+                str = output.charAt(i) + unit[5];
+            } else {
+                str = output.charAt(i) + unit[(output.length() - i - 1) % 4];
             }
-            else if ((output.length()-i-1+4)%8==0) {
-                str=output.charAt(i)+unit[4];
-            }
-            else if ((output.length()-i-1)%8==0) {
-                str=output.charAt(i)+unit[5];
-            }
-            else {
-                str=output.charAt(i)+unit[(output.length()-i-1)%4];
-            }
-            result+=str;
+            result += str;
         }
 
-        result=result.replaceAll("零[千百十]", "零");
-        result=result.replaceAll("亿零+万", "亿零");
-        result=result.replaceAll("万零+亿", "万亿");
-        result=result.replaceAll("零+", "零");
-        result=result.replaceAll("零万", "万");
-        result=result.replaceAll("零亿", "亿");
-        result=result.replaceAll("^一十", "十");
-        result=result.replaceAll("零$", "");
+        result = result.replaceAll("零[千百十]", "零");
+        result = result.replaceAll("亿零+万", "亿零");
+        result = result.replaceAll("万零+亿", "万亿");
+        result = result.replaceAll("零+", "零");
+        result = result.replaceAll("零万", "万");
+        result = result.replaceAll("零亿", "亿");
+        result = result.replaceAll("^一十", "十");
+        result = result.replaceAll("零$", "");
         return result;
     }
 }

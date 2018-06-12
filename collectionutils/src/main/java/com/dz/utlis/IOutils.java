@@ -36,8 +36,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Io处理类
- */
+* creat_user: zhengzaihong
+* Email:1096877329@qq.com
+* creat_date: 2017/6/12
+* creat_time: 9:33
+* describe Io处理类 多数api 来自nohttp
+**/
 public class IOutils {
 
     public static int bytesToInt(byte[] bytes) {

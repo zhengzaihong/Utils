@@ -50,9 +50,9 @@ import java.util.List;
 @SuppressWarnings("all")
 public class AndroidUtils {
 
-
     /**
      * 禁止滑动到头以后的发光效果
+     *
      * @param view
      */
     private static void disableOverScrollMode(View view) {
@@ -113,6 +113,7 @@ public class AndroidUtils {
 
     /**
      * 是否在后台运行
+     *
      * @param context
      * @return
      */
@@ -133,6 +134,20 @@ public class AndroidUtils {
         return false;
     }
 
+
+    /**
+     * 用于点击文字监听器
+     */
+
+    private static OnClickTextListener onClickTextListener;
+
+    private void setOnClickTextListener(OnClickTextListener onClickTextListener) {
+        this.onClickTextListener = onClickTextListener;
+    }
+
+    public static interface OnClickTextListener {
+        void onclick(View widget);
+    }
 
     /**
      * 设置粗体文字
@@ -316,6 +331,9 @@ public class AndroidUtils {
 
             @Override
             public void onClick(View widget) {
+                if (null != onClickTextListener) {
+                    onClickTextListener.onclick(widget);
+                }
             }
         }, startPosition, endPosition, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
         //设置给view显示出来
@@ -340,6 +358,9 @@ public class AndroidUtils {
 
                 @Override
                 public void onClick(View widget) {
+                    if (null != onClickTextListener) {
+                        onClickTextListener.onclick(widget);
+                    }
                 }
             }, 0, colorTextArray[i].length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
         }

@@ -11,8 +11,12 @@ import android.webkit.WebViewClient;
 import java.io.UnsupportedEncodingException;
 
 /**
- * webview 工具类
- */
+* creat_user: zhengzaihong
+* Email:1096877329@qq.com
+* creat_date: 2016/6/11
+* creat_time: 9:32
+* describe webview 工具类
+**/
 public class WebUtils {
     /**
      * 设置WebView
