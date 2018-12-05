@@ -47,7 +47,7 @@ publish {
     userOrg = 'zhengzaihong'
     groupId = 'com.zzh'
     uploadName = "androidTools"
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'Common tool classes'
     website = 'https://github.com/zhengzaihong/Utils.git'
 }

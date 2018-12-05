@@ -23,18 +23,6 @@ public class JavaUtils {
     public static boolean isdebug = false;
 
     /**
-     * @param list
-     * @return 将字符数集合转数组
-     */
-    public static String[] arrayToList(List<String> list) {
-        String[] arrary = new String[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            arrary[i] = list.get(i);
-        }
-        return arrary;
-    }
-
-    /**
      * @param s // 打印输出
      */
     public static void outPrint(String s) {
@@ -117,7 +105,7 @@ public class JavaUtils {
     /**
      * @return 只返回后面部分显示的
      */
-    public static String getPhoneCenterHide(String number) {
+    public static String getPhoneStartHide(String number) {
         StringBuffer buffer = new StringBuffer("");
         if (number.length() > 10) {
             for (int i = 0; i < number.length(); i++) {

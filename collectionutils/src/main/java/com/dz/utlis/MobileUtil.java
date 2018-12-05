@@ -103,7 +103,7 @@ public class MobileUtil {
 
     private WatchMobleChangeListener listener;
 
-    private void setWatchMobleChangeListener(WatchMobleChangeListener listener) {
+    public void setWatchMobleChangeListener(WatchMobleChangeListener listener) {
         this.listener = listener;
     }
 
@@ -111,7 +111,7 @@ public class MobileUtil {
         void changelistener(MobileBean mobileBean);
     }
 
-    class MobileBean {
+   public class MobileBean {
         // 目前电量
         private int BatteryN;
         // 电池电压

@@ -141,7 +141,7 @@ public class AndroidUtils {
 
     private static OnClickTextListener onClickTextListener;
 
-    private void setOnClickTextListener(OnClickTextListener onClickTextListener) {
+    public void setOnClickTextListener(OnClickTextListener onClickTextListener) {
         this.onClickTextListener = onClickTextListener;
     }
 

@@ -195,7 +195,7 @@ public class ImageUtil {
 
 
     // compressImage下面两个都是压缩图片方法 返回Bitmap对象
-    public static Bitmap compressImage(String picpath) {
+    public static Bitmap compressImage(String picpath,int width,int height) {
         BitmapFactory.Options newOpts = new BitmapFactory.Options();
         // 开始读入图片，此时把options.inJustDecodeBounds 设回true了
         newOpts.inJustDecodeBounds = true;
@@ -205,8 +205,8 @@ public class ImageUtil {
         int w = newOpts.outWidth;
         int h = newOpts.outHeight;
         // 现在主流手机比较多是800*480分辨率，所以高和宽我们设置为
-        float hh = 600f;// 这里设置高度为800f
-        float ww = 360f;// 这里设置宽度为480f
+        float hh = height;// 这里设置高度为800f
+        float ww = width;// 这里设置宽度为480f
         // 缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
         int be = 1;// be=1表示不缩放
         if (w > h && w > ww) {// 如果宽度大的话根据宽度固定大小缩放

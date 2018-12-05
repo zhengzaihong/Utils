@@ -42,7 +42,7 @@ import java.util.List;
 * creat_time: 9:33
 * describe Io处理类 多数api 来自nohttp
 **/
-public class IOutils {
+public class IOUtils {
 
     public static int bytesToInt(byte[] bytes) {
         StringBuilder stringBuilder = new StringBuilder("");
@@ -112,7 +112,7 @@ public class IOutils {
     }
 
 
-    private static final String FILENAME = "IOutils" + IOutils.class.getName();
+    private static final String FILENAME = "IOUtils" + IOUtils.class.getName();
 
     /**
      * desc:保存对象
@@ -173,7 +173,7 @@ public class IOutils {
      * @param key
      * @return modified:
      */
-    public Object readObject(Context context, String key) {
+    public static Object readObject(Context context, String key) {
         try {
             SharedPreferences sharedata = context.getSharedPreferences(
                     FILENAME, 0);

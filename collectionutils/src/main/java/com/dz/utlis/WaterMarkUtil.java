@@ -14,7 +14,7 @@ import android.graphics.Rect;
  * creat_time: 9:44
  * describe 给图片添加水印Util 如果图片过大可能导致 oom，建议配合提供的ImageUtil 压缩到指定大小后添加
  **/
-public class WatermarkUtil {
+public class WaterMarkUtil {
 
     /**
      * 设置水印图片在左上角

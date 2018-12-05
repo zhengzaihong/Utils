@@ -197,7 +197,7 @@ public class ToastUtil {
 
 
     private static Toast toast1;
-    public static void showTextToast(Context context, String msg) {
+    public static void show(Context context, String msg) {
         if (toast1 == null) {
             toast1 = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
         } else {
@@ -207,7 +207,7 @@ public class ToastUtil {
         toast1.show();
     }
 
-    public static void showCenterTextToast(Context context, String msg) {
+    public static void showCenter(Context context, String msg) {
         if (toast1 == null) {
             toast1 = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
         } else {

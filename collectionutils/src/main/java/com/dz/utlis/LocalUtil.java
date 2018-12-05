@@ -12,11 +12,11 @@ import java.io.File;
 * creat_time: 15:49
 * describe 当前系统缓存获取，关于系统的缓存 请看我文章https://blog.csdn.net/u014239140/article/details/53239797
 **/
-public class LocaUtil {
+public class LocalUtil {
 
     private Context context;
 
-    public LocaUtil(Context context){
+    public LocalUtil(Context context){
         this.context=context;
     }
 
