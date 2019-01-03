@@ -159,7 +159,7 @@ public class AndroidUtils {
      * @param endPosition   位置的结束位置
      */
 
-    public static void setBlodTextColor(Context context, final TextView textView, String content, int startPosition, int endPosition) {
+    public static void setBlodTextColor(final TextView textView, String content, int startPosition, int endPosition) {
         SpannableString spanString = new SpannableString(content);
         //再构造一个改变字体颜色的Span
         spanString.setSpan(new StyleSpan(android.graphics.Typeface.BOLD), startPosition, endPosition, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -177,12 +177,81 @@ public class AndroidUtils {
      * @param color         文字的颜色
      */
 
-    public static void setTextColor(Context context, final TextView textView, String content, int startPosition, int endPosition, String color) {
+    public static void setTextColor(final TextView textView, String content, int startPosition, int endPosition, int color) {
         SpannableString spanString = new SpannableString(content);
         //再构造一个改变字体颜色的Span
-        ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor(color));
+        ForegroundColorSpan span = new ForegroundColorSpan(color);
         //将这个Span应用于指定范围的字体
         spanString.setSpan(span, startPosition, endPosition, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+        //设置给view显示出来
+        textView.setText(spanString);
+    }
+
+
+    /**
+     * @param context        上下文
+     * @param textView       textView
+     * @param content        文字
+     * @param color          文字的颜色
+     * @param colorTextArray 需要被标色的文字的数组
+     */
+    public static void setTextColor(final TextView textView, String content, String colorTextArray[], int color) {
+        SpannableString spanString = new SpannableString(content);
+        //将这个Span应用于指定范围的字体
+        if (colorTextArray != null && colorTextArray.length > 0) {
+            for (int i = 0; i < colorTextArray.length; i++) {
+                ForegroundColorSpan span = new ForegroundColorSpan(color);
+                String temtext = colorTextArray[i];
+                int currentposition = content.indexOf(temtext);
+                spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+            }
+        }
+        //设置给view显示出来
+        textView.setText(spanString);
+    }
+
+
+    /**
+     * @param context        上下文
+     * @param textView       textView
+     * @param content        文字
+     * @param color          文字的颜色
+     * @param colorTextArray 需要被标色的文字的数组
+     */
+    public static void setRadioButtonTextColor(final RadioButton textView, String content, String colorTextArray[], int color) {
+        SpannableString spanString = new SpannableString(content);
+        //将这个Span应用于指定范围的字体
+        if (colorTextArray != null && colorTextArray.length > 0) {
+            for (int i = 0; i < colorTextArray.length; i++) {
+                ForegroundColorSpan span = new ForegroundColorSpan(color);
+                String temtext = colorTextArray[i];
+                int currentposition = content.indexOf(temtext);
+                spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+            }
+        }
+        //设置给view显示出来
+        textView.setText(spanString);
+    }
+
+
+    /**
+     * @param context        上下文
+     * @param textView       textView
+     * @param content        文字
+     * @param color          文字的颜色
+     * @param colorTextArray 需要被标色的文字的数组
+     */
+    public static void setCheckBoxTextColor( final CheckBox textView, String content, String colorTextArray[], int color) {
+        SpannableString spanString = new SpannableString(content);
+        //将这个Span应用于指定范围的字体
+        if (colorTextArray != null && colorTextArray.length > 0) {
+            for (int i = 0; i < colorTextArray.length; i++) {
+                ForegroundColorSpan span = new ForegroundColorSpan(color);
+                String temtext = colorTextArray[i];
+                int currentposition = content.indexOf(temtext);
+                spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+            }
+        }
         //设置给view显示出来
         textView.setText(spanString);
     }
@@ -195,97 +264,14 @@ public class AndroidUtils {
      * @param endPosition   位置的结束位置
      * @param color         文字的颜色
      */
-    public static void setTextColor(Context context, final EditText edittext, String content, int startPosition, int endPosition, String color) {
+    public static void setEditTextColor(final EditText edittext, String content, int startPosition, int endPosition, int color) {
         SpannableString spanString = new SpannableString(content);
         //再构造一个改变字体颜色的Span
-        ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor(color));
+        ForegroundColorSpan span = new ForegroundColorSpan(color);
         //将这个Span应用于指定范围的字体
         spanString.setSpan(span, startPosition, endPosition, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
         //设置给view显示出来
         edittext.setHint(spanString);
-    }
-
-    /**
-     * @param context        上下文
-     * @param textView       textView
-     * @param content        文字
-     * @param color          文字的颜色
-     * @param colorTextArray 需要被标色的文字的数组
-     */
-    public static void setTextColor(Context context, final TextView textView, String content, String colorTextArray[], String color) {
-        SpannableString spanString = new SpannableString(content);
-        //将这个Span应用于指定范围的字体
-        if (colorTextArray != null && colorTextArray.length > 0) {
-            for (int i = 0; i < colorTextArray.length; i++) {
-                ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor(color));
-                String temtext = colorTextArray[i];
-                int currentposition = content.indexOf(temtext);
-                spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-            }
-        }
-        //设置给view显示出来
-        textView.setText(spanString);
-    }
-
-    public static void setTextColor1(Context context, final TextView textView, String content, String colorTextArray[], String color) {
-        SpannableString spanString = new SpannableString(content);
-        //将这个Span应用于指定范围的字体
-        if (colorTextArray != null && colorTextArray.length > 0) {
-            for (int i = 0; i < colorTextArray.length; i++) {
-                ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor(color));
-                String temtext = colorTextArray[i];
-                int currentposition = content.indexOf(temtext);
-                spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-            }
-        }
-        //设置给view显示出来
-        textView.setText(spanString);
-    }
-
-
-    /**
-     * @param context        上下文
-     * @param textView       textView
-     * @param content        文字
-     * @param color          文字的颜色
-     * @param colorTextArray 需要被标色的文字的数组
-     */
-    public static void setRadioButtonTextColor(Context context, final RadioButton textView, String content, String colorTextArray[], String color) {
-        SpannableString spanString = new SpannableString(content);
-        //将这个Span应用于指定范围的字体
-        if (colorTextArray != null && colorTextArray.length > 0) {
-            for (int i = 0; i < colorTextArray.length; i++) {
-                ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor(color));
-                String temtext = colorTextArray[i];
-                int currentposition = content.indexOf(temtext);
-                spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-            }
-        }
-        //设置给view显示出来
-        textView.setText(spanString);
-    }
-
-
-    /**
-     * @param context        上下文
-     * @param textView       textView
-     * @param content        文字
-     * @param color          文字的颜色
-     * @param colorTextArray 需要被标色的文字的数组
-     */
-    public static void setCheckBoxTextColor(Context context, final CheckBox textView, String content, String colorTextArray[], String color) {
-        SpannableString spanString = new SpannableString(content);
-        //将这个Span应用于指定范围的字体
-        if (colorTextArray != null && colorTextArray.length > 0) {
-            for (int i = 0; i < colorTextArray.length; i++) {
-                ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor(color));
-                String temtext = colorTextArray[i];
-                int currentposition = content.indexOf(temtext);
-                spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-            }
-        }
-        //设置给view显示出来
-        textView.setText(spanString);
     }
 
     /**
@@ -295,12 +281,12 @@ public class AndroidUtils {
      * @param color          文字的颜色
      * @param colorTextArray 需要被标色的文字的数组
      */
-    public static void setTextColor(Context context, final EditText edittext, String content, String colorTextArray[], String color) {
+    public static void setEditTextColor(final EditText edittext, String content, String colorTextArray[], int color) {
         SpannableString spanString = new SpannableString(content);
         //将这个Span应用于指定范围的字体
         if (colorTextArray != null && colorTextArray.length > 0) {
             for (int i = 0; i < colorTextArray.length; i++) {
-                ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor(color));
+                ForegroundColorSpan span = new ForegroundColorSpan(color);
                 String temtext = colorTextArray[i];
                 int currentposition = content.indexOf(temtext);
                 spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
@@ -316,7 +302,7 @@ public class AndroidUtils {
      * @param context 上下文
      * @param content 文字
      */
-    public static void setTextColorAndClick(final Context context, final TextView textView, String content, int startPosition, int endPosition, final String colors) {
+    public static void setTextColorAndClick(final TextView textView, String content, int startPosition, int endPosition, final int colors, final boolean line) {
         SpannableString spanString = new SpannableString(content);
         //再构造一个改变字体颜色的Span
 //        ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor("#F06AA3"));
@@ -325,8 +311,8 @@ public class AndroidUtils {
             @Override
             public void updateDrawState(TextPaint ds) {
                 super.updateDrawState(ds);
-                ds.setColor(Color.parseColor(colors));//设置文本颜色
-                ds.setUnderlineText(false);      //设置下划线
+                ds.setColor(colors);//设置文本颜色
+                ds.setUnderlineText(line);      //设置下划线
             }
 
             @Override
@@ -343,7 +329,7 @@ public class AndroidUtils {
     }
 
 
-    public static void setTextColorAndClick(final Context context, final TextView textView, String content, String colorTextArray[], final String colors) {
+    public static void setTextColorAndClick(final TextView textView, String content, String colorTextArray[], final int colors,final boolean line) {
         SpannableString spanString = new SpannableString(content);
 
         for (int i = 0; i < colorTextArray.length; i++) {
@@ -352,8 +338,8 @@ public class AndroidUtils {
                 @Override
                 public void updateDrawState(TextPaint ds) {
                     super.updateDrawState(ds);
-                    ds.setColor(Color.parseColor(colors));//设置文本颜色
-                    ds.setUnderlineText(false);      //设置下划线
+                    ds.setColor(colors);//设置文本颜色
+                    ds.setUnderlineText(line);      //设置下划线
                 }
 
                 @Override

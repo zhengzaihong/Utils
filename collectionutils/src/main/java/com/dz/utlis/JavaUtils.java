@@ -1,6 +1,8 @@
 package com.dz.utlis;
 
 
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,6 +32,11 @@ public class JavaUtils {
             System.out.println("输出信息:" + s);
     }
 
+    public static void outRedPrint(String s) {
+        if (isdebug)
+            Log.e("输出信息：", s);
+    }
+
     /**
      * @param jsonString json字符串
      * @return 将json字符串转换成map的集合
@@ -57,31 +64,6 @@ public class JavaUtils {
         return valueMap;
     }
 
-
-    /**
-     * 判断单个字符串是否为空
-     *
-     * @param str
-     * @return true:字符串为空
-     */
-    public static boolean isEmpty(String str) {
-        return StringUtils.isEmpty(str);
-    }
-
-    /**
-     * 判断多个字符是否是空
-     *
-     * @param strs
-     * @return true:所有字符不为空
-     */
-    public static boolean isEmpty(String... strs) {
-        List<Boolean> booleans = new ArrayList<Boolean>();
-        for (int i = 0; i < strs.length; i++) {
-            booleans.add(isEmpty(strs[i]));
-        }
-        int index = booleans.indexOf(false);
-        return index == -1;
-    }
 
     /**
      * @return 返回中间部分被隐藏的字符串
@@ -148,15 +130,6 @@ public class JavaUtils {
         String reg = "^[A-Za-z0-9/]+$";
         boolean isCract = str.matches(reg);
         return isCract;
-    }
-
-
-    /**
-     * 判断一个对象是不是Null
-     */
-
-    public static boolean nonNull(Object obj) {
-        return obj != null;
     }
 
 
