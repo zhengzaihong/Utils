@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -154,6 +155,44 @@ public class ImageUtil {
         return false;
     }
 
+    /**
+     * 保存图片到图库
+     * @param context
+     * @param bmp
+     * @param filePath
+     */
+
+    public static void saveImageToGallery(Context context, Bitmap bmp, String filePath) {
+        // 首先保存图片
+        File appDir = new File(filePath);
+        if (!appDir.exists()) {
+            appDir.mkdir();
+        }
+        String fileName = System.currentTimeMillis() + ".jpg";
+        File file = new File(appDir, fileName);
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // 其次把文件插入到系统图库
+        try {
+            MediaStore.Images.Media.insertImage(context.getContentResolver(),
+                    file.getAbsolutePath(), fileName, null);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        // 最后通知图库更新
+        context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(file)));
+    }
+
+
     private static int computeSampleSize(BitmapFactory.Options options,
                                          int minSideLength, int maxNumOfPixels) {
         int initialSize = computeInitialSampleSize(options, minSideLength,
@@ -191,11 +230,6 @@ public class ImageUtil {
         } else {
             return upperBound;
         }
-    }
-
-
-    public interface ImageLoadCallBack {
-        void callback(Bitmap bitmap);
     }
 
 
@@ -463,6 +497,7 @@ public class ImageUtil {
     /**
      * uri转绝对路径
      * 4.4以前
+     *
      * @param context
      * @param uri
      */

@@ -228,7 +228,7 @@ public class PermissionUtils {
      * -----------如果应用第一次请求权限或 用户在过去拒绝了权限请求，
      * -----------并在权限请求系统对话框中选择了 Don't ask again 选项，此方法将返回 false。
      */
-    public static boolean judgePermission(Context context, String permission) {
+    public boolean judgePermission(Context context, String permission) {
         if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) context, permission))
             return true;
         else
@@ -241,7 +241,7 @@ public class PermissionUtils {
      *
      * @return 未授权的权限
      */
-    public static List<String> checkMorePermission(Context context, String[] permissions) {
+    public List<String> checkMorePermission(Context context, String[] permissions) {
         List<String> permissionList = new ArrayList<>();
         for (int i = 0; i < permissions.length; i++) {
             if (!checkPermission(context, permissions[i]))
@@ -255,7 +255,7 @@ public class PermissionUtils {
      *
      * @return true：已授权； false：未授权；
      */
-    public static boolean checkPermission(Context context, String permission) {
+    public  boolean checkPermission(Context context, String permission) {
         if (ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED)
             return true;
         else
@@ -265,7 +265,7 @@ public class PermissionUtils {
     /**
      * 跳转到权限设置界面
      */
-    public static void toAppSetting(Context context) {
+    public  void toAppSetting(Context context) {
         Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         if (Build.VERSION.SDK_INT >= 9) {

@@ -103,7 +103,7 @@ public class JavaUtils {
 
 
     /**
-     * @param str 判断一个字符串是不是村字母
+     * @param str 判断一个字符串是不是纯字母
      * @return
      */
     public static boolean justisAz(String str) {
@@ -113,7 +113,7 @@ public class JavaUtils {
     }
 
     /**
-     * @param str 判断一个字符串是不是村数字
+     * @param str 判断一个字符串是不是纯数字
      * @return
      */
     public static boolean justNumber(String str) {

@@ -6,13 +6,13 @@ import java.math.BigDecimal;
 /**
  *creat_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2019/1/3 0003
+ *creat_date: 2017/1/3 0003
  *creat_time: 13:56
  *describe: 精度计算工具类
  **/
 
 public class MathUtil {
-    //默认吃吃饭运算精度
+    //默认运算精度
     private static final int DEF_DIV_SCALE = 10;
 
     //这个类不能实例化

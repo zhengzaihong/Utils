@@ -10,7 +10,7 @@ import java.io.File;
 * Email:1096877329@qq.com
 * creat_date: 2016/3/26
 * creat_time: 15:49
-* describe 当前系统缓存获取，关于系统的缓存 请看我文章https://blog.csdn.net/u014239140/article/details/53239797
+* describe 当前系统缓存获取
 **/
 public class LocalUtil {
 

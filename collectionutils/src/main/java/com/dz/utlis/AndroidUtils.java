@@ -139,12 +139,6 @@ public class AndroidUtils {
      * 用于点击文字监听器
      */
 
-    private static OnClickTextListener onClickTextListener;
-
-    public void setOnClickTextListener(OnClickTextListener onClickTextListener) {
-        this.onClickTextListener = onClickTextListener;
-    }
-
     public static interface OnClickTextListener {
         void onclick(View widget);
     }
@@ -302,7 +296,7 @@ public class AndroidUtils {
      * @param context 上下文
      * @param content 文字
      */
-    public static void setTextColorAndClick(final TextView textView, String content, int startPosition, int endPosition, final int colors, final boolean line) {
+    public static void setTextColorAndClick(final TextView textView, String content, int startPosition, int endPosition, final int colors, final boolean line, final OnClickTextListener listener) {
         SpannableString spanString = new SpannableString(content);
         //再构造一个改变字体颜色的Span
 //        ForegroundColorSpan span = new ForegroundColorSpan(Color.parseColor("#F06AA3"));
@@ -317,8 +311,8 @@ public class AndroidUtils {
 
             @Override
             public void onClick(View widget) {
-                if (null != onClickTextListener) {
-                    onClickTextListener.onclick(widget);
+                if (null != listener) {
+                    listener.onclick(widget);
                 }
             }
         }, startPosition, endPosition, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
@@ -329,7 +323,7 @@ public class AndroidUtils {
     }
 
 
-    public static void setTextColorAndClick(final TextView textView, String content, String colorTextArray[], final int colors,final boolean line) {
+    public static void setTextColorAndClick(final TextView textView, String content, String colorTextArray[], final int colors,final boolean line,final OnClickTextListener listener) {
         SpannableString spanString = new SpannableString(content);
 
         for (int i = 0; i < colorTextArray.length; i++) {
@@ -344,8 +338,8 @@ public class AndroidUtils {
 
                 @Override
                 public void onClick(View widget) {
-                    if (null != onClickTextListener) {
-                        onClickTextListener.onclick(widget);
+                    if (null != listener) {
+                        listener.onclick(widget);
                     }
                 }
             }, 0, colorTextArray[i].length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);

@@ -13,6 +13,7 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        //gradlew clean build bintrayUpload -PbintrayUser=zhengzaihong -PbintrayKey=7aced6be172bfe8d162f06f5ba5ca1609321b54c -PdryRun=false
     }
 }
 
