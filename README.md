@@ -60,10 +60,12 @@ requestPermission方法参数介绍：
 复写onRequestPermissionsResult 方法，调用PermissionUtils中的onRequestPermissionsResult方法，最后一个参数传入true 则会在CallBackListener的notAskPermission方法中进行返回是否需要跳转。不跳转可以不传或者false。当然该工具类不止这些。
 
 
-###更多工具请查看源码。
+#更多工具请查看源码。
 
 
-##android 小贴士：
+
+
+android 小贴士：
  
 在开发中许多时候用户打开输入法,更多的是希望不需要每次都去点击输入法的关闭按钮才关闭,输入法千奇百怪,有点并不好操作,而是希望在打开输入法的时候点击以外区域自动关闭，那怎么操作呢？很简单，在你的基类activity中加入如下代码即可解决。
 
