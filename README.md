@@ -1,3 +1,9 @@
+本库工具集合：
+
+![](https://github.com/zhengzaihong/Utils/blob/master/images/1553578288.jpg)
+
+
+
 依赖地址：
 
 
@@ -53,3 +59,5 @@ requestPermission方法参数介绍：
 
 复写onRequestPermissionsResult 方法，调用PermissionUtils中的onRequestPermissionsResult方法，最后一个参数传入true 则会在CallBackListener的notAskPermission方法中进行返回是否需要跳转。不跳转可以不传或者false。当然该工具类不止这些。
 
+
+###更多工具请查看源码。
