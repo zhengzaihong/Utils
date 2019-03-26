@@ -61,3 +61,57 @@ requestPermission方法参数介绍：
 
 
 ###更多工具请查看源码。
+
+
+##android 小贴士：
+ 
+在开发中许多时候用户打开输入法,更多的是希望不需要每次都去点击输入法的关闭按钮才关闭,输入法千奇百怪,有点并不好操作,而是希望在打开输入法的时候点击以外区域自动关闭，那怎么操作呢？很简单，在你的基类activity中加入如下代码即可解决。
+
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+          
+            View v = getCurrentFocus();
+            if (isShouldHideInput(v, ev)) {
+                if(hideInputMethod(this, v)) {
+                    return true; //隐藏键盘时，其他控件不响应点击事件==》注释则不拦截点击事件
+                }
+            }
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+
+    /**
+     * 点击屏幕非输入框区域关闭软键盘
+     * @param context
+     * @param v
+     * @return
+     */
+    public static Boolean hideInputMethod(Context context, View v) {
+        InputMethodManager imm = (InputMethodManager) context
+                .getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            return imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        }
+        return false;
+    }
+
+
+    public static boolean isShouldHideInput(View v, MotionEvent event) {
+        if (v != null && (v instanceof EditText)) {
+            int[] leftTop = { 0, 0 };
+            v.getLocationInWindow(leftTop);
+            int left = leftTop[0], top = leftTop[1], bottom = top + v.getHeight(), right = left
+                    + v.getWidth();
+            if (event.getX() > left && event.getX() < right
+                    && event.getY() > top && event.getY() < bottom) {
+                // 保留点击EditText的事件
+                return false;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
