@@ -32,7 +32,7 @@
                     override fun notAskPermission(permission: List<String>, goSetting: Boolean) {
 
                         if(goSetting){
-                            PermissionUtils.toAppSetting(this@MainActivity)
+                            PermissionUtils.getInstance().toAppSetting(this@MainActivity)
                         }
                     }
 
