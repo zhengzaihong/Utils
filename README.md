@@ -7,7 +7,9 @@
 依赖地址：
 
 
- compile 'com.zzh:rjtools:xx.xx.xx'
+   compile 'com.zzh:rjtools:xx.xx.xx'     
+   
+ 注意修改版本号,version_1.0.4即填写1.0.4
 
 
 例:应用请求权限处理，这里用kotlin演示，java同学放心使用
