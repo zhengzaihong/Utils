@@ -7,6 +7,6 @@ package com.dz.utlis.interfaces;
  * creat_time: 14:11
  * describe: 简易bus监听接口
  **/
-public interface EventListener {
+public interface EventBusListener {
     void registerMessage(Object object);
 }
