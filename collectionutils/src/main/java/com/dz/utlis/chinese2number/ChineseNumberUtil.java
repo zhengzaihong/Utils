@@ -1,5 +1,7 @@
 package com.dz.utlis.chinese2number;
 
+import android.text.TextUtils;
+
 import java.util.regex.Pattern;
 
 /**

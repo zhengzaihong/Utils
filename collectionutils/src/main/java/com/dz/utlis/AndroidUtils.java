@@ -1,6 +1,8 @@
 package com.dz.utlis;
 
 import android.app.ActivityManager;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -134,6 +136,21 @@ public class AndroidUtils {
         return false;
     }
 
+    /**
+     * 将文本丢到剪切板
+     * @param context
+     * @param content
+     * @return
+     */
+    public static boolean copyTextToClipboard(Context context, CharSequence content) {
+        ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+        if (clipboardManager != null) {
+            ClipData clipData = ClipData.newPlainText(content, content);
+            clipboardManager.setPrimaryClip(clipData);
+            return true;
+        }
+        return false;
+    }
 
     /**
      * 用于点击文字监听器

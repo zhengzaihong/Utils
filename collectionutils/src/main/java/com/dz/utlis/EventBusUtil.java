@@ -1,10 +1,8 @@
 package com.dz.utlis;
 
-import com.dz.utlis.interfaces.EventListener;
+import com.dz.utlis.interfaces.EventBusListener;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -19,7 +17,7 @@ public class EventBusUtil {
 
     static EventBusUtil mXEventBus;
     //保证不重复
-    static Set<EventListener> mListeners = new HashSet<>();
+    static Set<EventBusListener> mListeners = new HashSet<>();
 
     private EventBusUtil() {
 
@@ -36,12 +34,12 @@ public class EventBusUtil {
         }
     }
 
-    public void register(EventListener listener) {
+    public void register(EventBusListener listener) {
         mListeners.add(listener);
 
     }
 
-    public void unregister(EventListener listener) {
+    public void unregister(EventBusListener listener) {
         if (mListeners.contains(listener)) {
             mListeners.remove(listener);
         }
@@ -51,7 +49,7 @@ public class EventBusUtil {
      * 推送数据
      */
     public void post(Object object) {
-        for (EventListener eventListener : mListeners) {
+        for (EventBusListener eventListener : mListeners) {
             eventListener.registerMessage(object);
         }
     }

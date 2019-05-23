@@ -3,8 +3,15 @@ package com.dz.utlis;
 import java.io.UnsupportedEncodingException;
 
 /**
- * @zzh
- */
+ *creat_user: zhengzaihong
+ *email:1096877329@qq.com
+ *creat_date: 2019/5/22 0022
+ *creat_time: 14:48
+ *describe: 格式转换
+ **/
+
+
+
 public class CodeUtil {
 	//将gbk字符串转utf-8
 	public static String getUTF8StringFromGBKString(String gbkStr) {

@@ -1,4 +1,4 @@
-package com.hefu.deepfoundationpit.tools;
+package com.dz.utlis;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -6,6 +6,15 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+/**
+ *creat_user: zhengzaihong
+ *email:1096877329@qq.com
+ *creat_date: 2019/5/22 0022
+ *creat_time: 14:48
+ *describe: 集合处理工具
+ **/
+
 
 
 public class CollectionUtil {

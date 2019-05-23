@@ -1,4 +1,4 @@
-package com.hefu.deepfoundationpit.tools;
+package com.dz.utlis;
 
 import android.app.Activity;
 import android.app.AppOpsManager;
@@ -10,9 +10,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
-
-import com.dz.utlis.IntentUtils;
-import com.dz.utlis.JavaUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -33,7 +30,10 @@ public class CheckNotificationUtil {
 
     }
 
-
+    /**
+     * 去设置开启通知界面
+     * @param activity
+     */
     public static void gotoNotificationSetting(Activity activity) {
         ApplicationInfo appInfo = activity.getApplicationInfo();
         String pkg = activity.getApplicationContext().getPackageName();
@@ -71,6 +71,11 @@ public class CheckNotificationUtil {
     private static final String OP_POST_NOTIFICATION = "OP_POST_NOTIFICATION";
 
 
+    /**
+     * 判断是否开启通知状态
+     * @param context
+     * @return
+     */
     public static boolean isNotificationEnabled(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             return isEnableV26(context);
@@ -86,6 +91,7 @@ public class CheckNotificationUtil {
      * @param context
      * @return
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static boolean isEnableV19(Context context) {
         AppOpsManager mAppOps = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
         ApplicationInfo appInfo = context.getApplicationInfo();

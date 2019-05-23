@@ -375,16 +375,4 @@ public class FileUtils {
             return false;
     }
 
-    /**
-     * Copy to clipboard.
-     */
-    public static boolean copyTextToClipboard(Context context, CharSequence content) {
-        ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-        if (clipboardManager != null) {
-            ClipData clipData = ClipData.newPlainText(content, content);
-            clipboardManager.setPrimaryClip(clipData);
-            return true;
-        }
-        return false;
-    }
 }

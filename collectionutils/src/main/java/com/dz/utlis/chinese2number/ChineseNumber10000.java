@@ -1,5 +1,7 @@
 package com.dz.utlis.chinese2number;
 
+import android.text.TextUtils;
+
 /**
 * creat_user: zhengzaihong
 * eamil:1096877329@qq.com

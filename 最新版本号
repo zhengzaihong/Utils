@@ -1,1 +1,13 @@
-1.0.4
+最新版本号：1.0.5
+
+2019-5-23更新情况：
+
+1.添加ChineseNumberUtil工具支持把中文字符串包含中文类型的数字转成阿拉伯数字返回。
+
+2.添加CheckNotificationUtil检查系统是否开启对本应用的通知权限。
+
+3.添加StatusBarUtil状态栏颜色修改和沉浸式工具。
+
+4.添加集合处理CollectionUtil工具。
+
+5.其他工具类部分Api优化和新增

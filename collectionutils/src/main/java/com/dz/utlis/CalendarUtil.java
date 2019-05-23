@@ -4,6 +4,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+/**
+ *creat_user: zhengzaihong
+ *email:1096877329@qq.com
+ *creat_date: 2018/5/22 0022
+ *creat_time: 16:51
+ *describe: 日历工具
+ **/
+
+
 
 @SuppressWarnings("all")
 public class CalendarUtil {
@@ -118,7 +127,7 @@ public class CalendarUtil {
      * 当前时间加一年
      */
     public static String addYear(int startTime){
-        Date firstDate = transForDate3(startTime);
+        Date firstDate = transForDate(startTime);
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(firstDate);
         calendar.add(Calendar.YEAR,1);
@@ -145,7 +154,7 @@ public class CalendarUtil {
      * @param ms
      * @return
      */
-    public static Date transForDate3(Integer ms){
+    public static Date transForDate(Integer ms){
         if(ms==null){
             ms=0;
         }
@@ -162,96 +171,6 @@ public class CalendarUtil {
         }
         return temp;
     }
-    /**
-     * 时间戳转日期
-     * @param ms
-     * @return
-     */
-    public static Date transForDate(Long ms){
-        if(ms==null){
-            ms=(long)0;
-        }
-        long msl=(long)ms*1000;
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date temp=null;
-        if(ms!=null){
-            try {
-                String str=sdf.format(msl);
-                temp=sdf.parse(str);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }
-        return temp;
-    }
 
-
-    public static String transForDate1(Integer ms){
-        String str = "";
-        if(ms!=null){
-            long msl=(long)ms*1000;
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-            if(ms!=null){
-                try {
-                    str=sdf.format(msl);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return str;
-    }
-    public static String transForDate2(Integer ms){
-        String str = "";
-        if(ms!=null){
-            long msl=(long)ms*1000;
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-
-            if(ms!=null){
-                try {
-                    str=sdf.format(msl);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return str;
-    }
-
-    public static String transForDate4(Integer ms){
-        String str = "";
-        if(ms!=null){
-            long msl=(long)ms*1000;
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy.MM.dd");
-
-            if(ms!=null){
-                try {
-                    str=sdf.format(msl);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return str;
-    }
-
-
-    public static String transForDate5(Integer ms){
-        String str = "";
-        if(ms!=null){
-            long msl=(long)ms*1000;
-            SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-
-            if(ms!=null){
-                try {
-                    str=sdf.format(msl);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return str;
-    }
 
 }

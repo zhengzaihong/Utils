@@ -105,4 +105,17 @@ public class MathUtil {
         BigDecimal one = new BigDecimal("1");
         return b.divide(one, scale, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
+
+
+
+    /**
+     * @param value 值
+     * @param num   保留几位
+     * @return 返回保留几位的数,四舍五入。
+     */
+    public static String persistValue(double value, int num) {
+        return String.format("%." + num + "f", value);
+    }
+
+
 }

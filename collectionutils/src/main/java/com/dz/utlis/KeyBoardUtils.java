@@ -9,7 +9,15 @@ import android.widget.EditText;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
-//打开或关闭软键盘
+/**
+ * creat_user: zhengzaihong
+ * email:1096877329@qq.com
+ * creat_date: 2017/5/22 0022
+ * creat_time: 16:56
+ * describe: 打开或关闭软键盘
+ **/
+
+
 public class KeyBoardUtils {
     /**
      * 打开软键盘
@@ -57,7 +65,7 @@ public class KeyBoardUtils {
      * 打开键盘
      **/
     public static void showInput(Context context, View view) {
-        InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm != null) {
             view.requestFocus();
             imm.showSoftInput(view, 0);
@@ -77,6 +85,7 @@ public class KeyBoardUtils {
 
     /**
      * 关闭输入法
+     *
      * @param context
      * @param activity 当前的activity
      */
@@ -134,7 +143,6 @@ public class KeyBoardUtils {
             }
         }.start();
     }
-
 
 
 }

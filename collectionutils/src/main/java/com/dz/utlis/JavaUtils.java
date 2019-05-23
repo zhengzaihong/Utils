@@ -106,7 +106,7 @@ public class JavaUtils {
      * @param str 判断一个字符串是不是纯字母
      * @return
      */
-    public static boolean justisAz(String str) {
+    public static boolean justAz(String str) {
         String reg = "^[a-zA-Z\\s]*$";
         boolean isCract = str.matches(reg);
         return isCract;
@@ -133,46 +133,4 @@ public class JavaUtils {
     }
 
 
-    /**
-     * 将数字转化汉字显示
-     *
-     * @param input
-     * @return
-     */
-    public static String getChinese(String input) {
-        String[] num = new String[]{"零", "一", "二", "三", "四", "五", "六", "七", "八", "九"};
-        String[] unit = new String[]{"", "十", "百", "千", "万", "亿"};
-        String[] mid = new String[input.length()];
-        String output = "";
-
-        for (int i = 0; i < input.length(); i++) {
-            mid[i] = num[Integer.parseInt("" + input.charAt(i))];
-            output += mid[i];
-        }
-
-        String str = "";
-        String result = "";
-        for (int i = 0; i < output.length(); i++) {
-            if (output.length() - i - 1 == 0) {
-                str = "" + output.charAt(i);
-            } else if ((output.length() - i - 1 + 4) % 8 == 0) {
-                str = output.charAt(i) + unit[4];
-            } else if ((output.length() - i - 1) % 8 == 0) {
-                str = output.charAt(i) + unit[5];
-            } else {
-                str = output.charAt(i) + unit[(output.length() - i - 1) % 4];
-            }
-            result += str;
-        }
-
-        result = result.replaceAll("零[千百十]", "零");
-        result = result.replaceAll("亿零+万", "亿零");
-        result = result.replaceAll("万零+亿", "万亿");
-        result = result.replaceAll("零+", "零");
-        result = result.replaceAll("零万", "万");
-        result = result.replaceAll("零亿", "亿");
-        result = result.replaceAll("^一十", "十");
-        result = result.replaceAll("零$", "");
-        return result;
-    }
 }
