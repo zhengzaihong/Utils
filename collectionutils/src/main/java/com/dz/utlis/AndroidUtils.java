@@ -57,7 +57,7 @@ public class AndroidUtils {
      *
      * @param view
      */
-    private static void disableOverScrollMode(View view) {
+    public static void disableOverScrollMode(View view) {
         if (Build.VERSION.SDK_INT < 9) {
             return;
         }

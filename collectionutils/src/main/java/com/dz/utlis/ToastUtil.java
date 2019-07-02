@@ -15,9 +15,9 @@ import android.widget.Toast;
  * describe 花式Toast
  **/
 public class ToastUtil {
+
     private Toast toast;
     private LinearLayout toastView;
-
     /**
      * 修改原布局的Toast
      */
@@ -180,41 +180,4 @@ public class ToastUtil {
         return this;
     }
 
-    /**
-     * 显示Toast
-     *
-     * @return
-     */
-    public ToastUtil show() {
-        toast.show();
-        return this;
-    }
-
-    //获取Toast
-    public Toast getToast() {
-        return toast;
-    }
-
-
-    private static Toast toast1;
-    public static void show(Context context, String msg) {
-        if (toast1 == null) {
-            toast1 = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
-        } else {
-            toast1.setText(msg);
-        }
-        toast1.setGravity(Gravity.BOTTOM, 0, 0);
-        toast1.show();
-    }
-
-    public static void showCenter(Context context, String msg) {
-        if (toast1 == null) {
-            toast1 = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
-        } else {
-            toast1.setText(msg);
-        }
-
-        toast1.setGravity(Gravity.CENTER, 0, 0);
-        toast1.show();
-    }
 }
