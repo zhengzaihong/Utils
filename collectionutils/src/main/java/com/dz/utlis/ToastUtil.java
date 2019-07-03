@@ -180,4 +180,20 @@ public class ToastUtil {
         return this;
     }
 
+    /**
+     * 显示Toast
+     *
+     * @return
+     */
+    public ToastUtil show() {
+        toast.show();
+        return this;
+    }
+
+    //获取Toast
+    public Toast getToast() {
+        return toast;
+    }
+
+
 }
