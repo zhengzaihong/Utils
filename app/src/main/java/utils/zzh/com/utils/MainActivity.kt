@@ -4,13 +4,15 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.dz.utlis.WaterMarkUtil
+import com.dz.utlis.*
 import kotlinx.android.synthetic.main.activity_main.*
-
+import android.graphics.Typeface
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         setContentView(R.layout.activity_main)
 
 
@@ -32,5 +34,10 @@ class MainActivity : AppCompatActivity() {
         textBitmap = WaterMarkUtil.drawTextToCenter(this, textBitmap, "中间", 16, Color.RED)
 
         wartermark_pic.setImageBitmap(textBitmap)
+
+        ToastTool.get().show("ssdnsidsidnsidnsi")
+
+
+
     }
 }

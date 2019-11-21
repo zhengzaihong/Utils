@@ -1,13 +1,8 @@
 package com.dz.utlis;
 
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.GridView;
-import android.widget.ListAdapter;
-
-import java.lang.reflect.Field;
 
 /**
  *creat_user: zhengzaihong
@@ -18,6 +13,13 @@ import java.lang.reflect.Field;
  **/
 public class UiCompat {
 
+
+    /**
+     * 获取颜色
+     * @param resources
+     * @param id
+     * @return
+     */
     public static int getColor(Resources resources, int id) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             return resources.getColor(id, null);
@@ -25,5 +27,20 @@ public class UiCompat {
             return resources.getColor(id);
         }
     }
+
+    /**
+     * 获取 Drawable
+     * @param resources
+     * @param id
+     * @return
+     */
+    public static Drawable getDrawable(Resources resources, int id) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return resources.getDrawable(id, null);
+        } else {
+            return resources.getDrawable(id);
+        }
+    }
+
 
 }

@@ -39,7 +39,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
     testImplementation 'junit:junit:4.12'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.0-alpha'
     implementation 'com.android.support:design:26.1.0'
 }
 //添加
@@ -48,7 +49,7 @@ publish {
     userOrg = 'zhengzaihong'
     groupId = 'com.zzh'
     uploadName = "androidTools"
-    publishVersion = '1.0.7'
+    publishVersion = '1.0.8'
     desc = 'Common tool classes'
     website = 'https://github.com/zhengzaihong/Utils.git'
 }

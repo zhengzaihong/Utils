@@ -69,6 +69,16 @@ public class TimeUtil {
         }
         return t;
     }
+    public static String stampstoTime(Long time, String patten) {
+        String t = "";
+        try {
+            t = new SimpleDateFormat(patten).format(new Date(time * 1000L));
+        } catch (Exception e) {
+            e.printStackTrace();
+            t = stampstoTime(currentTimeStamp().toString(), "yyyy-MM-dd");
+        }
+        return t;
+    }
 
     /**
      *

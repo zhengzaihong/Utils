@@ -1,5 +1,6 @@
 package com.dz.utlis;
 
+import android.app.Application;
 import android.content.Context;
 import android.view.Gravity;
 import android.view.View;

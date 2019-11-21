@@ -80,7 +80,9 @@ public class AppOpsUtils {
     public static final int OP_READ_EXTERNAL_STORAGE = 59;
     public static final int OP_WRITE_EXTERNAL_STORAGE = 60;
     public static final int OP_TURN_SCREEN_ON = 61;
-    private static final String TAG = "liyujiang";
+
+
+    private static final String TAG = "--------";
 
     /**
     * 是否禁用通知

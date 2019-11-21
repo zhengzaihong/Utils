@@ -26,15 +26,6 @@ import java.util.List;
  *describe: 手机sdcard
  **/
 public class SdCardUtil {
-	/*
-	 * 判断SD卡是否存在
-	 */
-	public static boolean ExistSDCard() {
-		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-			return true;
-		} else
-			return false;
-	}
 
 	/*
 	 * 获取SD卡的剩余容量
@@ -208,5 +199,22 @@ public class SdCardUtil {
 		storagges.trimToSize();
 
 		return storagges;
+	}
+
+
+	public static File getAppRootPath(Context context) {
+		if (sdCardIsAvailable()) {
+			return Environment.getExternalStorageDirectory();
+		} else {
+			return context.getFilesDir();
+		}
+	}
+
+	public static boolean sdCardIsAvailable() {
+		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+			File sd = new File(Environment.getExternalStorageDirectory().getAbsolutePath());
+			return sd.canWrite();
+		} else
+			return false;
 	}
 }

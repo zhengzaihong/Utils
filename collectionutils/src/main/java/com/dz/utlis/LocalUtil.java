@@ -14,17 +14,15 @@ import java.io.File;
 **/
 public class LocalUtil {
 
-    private Context context;
 
-    public LocalUtil(Context context){
-        this.context=context;
+    private LocalUtil(){
     }
 
     /**
      * 计算缓存的大小,
      * @return
      */
-    public String getCacheSize() {
+    public static String getCacheSize(Context context) {
         long fileSize = 0;
         String cacheSize = "0KB";
         File filesDir = context.getApplicationContext().getFilesDir();// /data/data/package_name/files
@@ -44,7 +42,7 @@ public class LocalUtil {
     /**
      * 清除app缓存
      */
-    public void clearAppCache() {
+    public static void clearAppCache(Context context) {
         // 清除数据缓存
         clearCacheFolder(context.getFilesDir(), System.currentTimeMillis());
         clearCacheFolder(context.getCacheDir(), System.currentTimeMillis());
@@ -61,7 +59,7 @@ public class LocalUtil {
      * @param curTime 当前系统时间
      * @return
      */
-    private int clearCacheFolder(File dir, long curTime) {
+    private static int clearCacheFolder(File dir, long curTime) {
         int deletedFiles = 0;
         if (dir != null && dir.isDirectory()) {
             try {
@@ -120,8 +118,11 @@ public class LocalUtil {
         if (length >= 1073741824) {
             sub_string = String.valueOf((float) length / 1073741824).indexOf(
                     ".");
+
             result = ((float) length / 1073741824 + "000").substring(0,
                     sub_string + 3) + "GB";
+
+
         } else if (length >= 1048576) {
             sub_string = String.valueOf((float) length / 1048576).indexOf(".");
             result = ((float) length / 1048576 + "000").substring(0,

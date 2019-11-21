@@ -13,6 +13,7 @@ import java.io.UnsupportedEncodingException;
 
 
 public class CodeUtil {
+
 	//将gbk字符串转utf-8
 	public static String getUTF8StringFromGBKString(String gbkStr) {
         try {  

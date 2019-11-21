@@ -70,22 +70,6 @@ public class AndroidUtils {
         }
     }
 
-    /**
-     * 获取editext文本的长度
-     *
-     * @param editText
-     * @return
-     */
-    public static int getEditTextLength(EditText editText) {
-        if (null != editText) {
-            String string = editText.getText() + "";
-            if (string.trim().length() > 0) {
-                return string.length();
-            }
-        }
-        return 0;
-    }
-
 
     /**
      * 用来判断服务是否运行.
@@ -111,7 +95,6 @@ public class AndroidUtils {
         }
         return isRunning;
     }
-
 
     /**
      * 是否在后台运行
@@ -199,73 +182,6 @@ public class AndroidUtils {
     }
 
 
-    /**
-     * @param context        上下文
-     * @param textView       textView
-     * @param content        文字
-     * @param color          文字的颜色
-     * @param colorTextArray 需要被标色的文字的数组
-     */
-    public static void setTextColor(final TextView textView, String content, String colorTextArray[], int color) {
-        SpannableString spanString = new SpannableString(content);
-        //将这个Span应用于指定范围的字体
-        if (colorTextArray != null && colorTextArray.length > 0) {
-            for (int i = 0; i < colorTextArray.length; i++) {
-                ForegroundColorSpan span = new ForegroundColorSpan(color);
-                String temtext = colorTextArray[i];
-                int currentposition = content.indexOf(temtext);
-                spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-            }
-        }
-        //设置给view显示出来
-        textView.setText(spanString);
-    }
-
-
-    /**
-     * @param context        上下文
-     * @param textView       textView
-     * @param content        文字
-     * @param color          文字的颜色
-     * @param colorTextArray 需要被标色的文字的数组
-     */
-    public static void setRadioButtonTextColor(final RadioButton textView, String content, String colorTextArray[], int color) {
-        SpannableString spanString = new SpannableString(content);
-        //将这个Span应用于指定范围的字体
-        if (colorTextArray != null && colorTextArray.length > 0) {
-            for (int i = 0; i < colorTextArray.length; i++) {
-                ForegroundColorSpan span = new ForegroundColorSpan(color);
-                String temtext = colorTextArray[i];
-                int currentposition = content.indexOf(temtext);
-                spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-            }
-        }
-        //设置给view显示出来
-        textView.setText(spanString);
-    }
-
-
-    /**
-     * @param context        上下文
-     * @param textView       textView
-     * @param content        文字
-     * @param color          文字的颜色
-     * @param colorTextArray 需要被标色的文字的数组
-     */
-    public static void setCheckBoxTextColor( final CheckBox textView, String content, String colorTextArray[], int color) {
-        SpannableString spanString = new SpannableString(content);
-        //将这个Span应用于指定范围的字体
-        if (colorTextArray != null && colorTextArray.length > 0) {
-            for (int i = 0; i < colorTextArray.length; i++) {
-                ForegroundColorSpan span = new ForegroundColorSpan(color);
-                String temtext = colorTextArray[i];
-                int currentposition = content.indexOf(temtext);
-                spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-            }
-        }
-        //设置给view显示出来
-        textView.setText(spanString);
-    }
 
     /**
      * @param context       上下文
@@ -283,28 +199,6 @@ public class AndroidUtils {
         spanString.setSpan(span, startPosition, endPosition, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
         //设置给view显示出来
         edittext.setHint(spanString);
-    }
-
-    /**
-     * @param context        上下文
-     * @param edittext       edittext
-     * @param content        文字
-     * @param color          文字的颜色
-     * @param colorTextArray 需要被标色的文字的数组
-     */
-    public static void setEditTextColor(final EditText edittext, String content, String colorTextArray[], int color) {
-        SpannableString spanString = new SpannableString(content);
-        //将这个Span应用于指定范围的字体
-        if (colorTextArray != null && colorTextArray.length > 0) {
-            for (int i = 0; i < colorTextArray.length; i++) {
-                ForegroundColorSpan span = new ForegroundColorSpan(color);
-                String temtext = colorTextArray[i];
-                int currentposition = content.indexOf(temtext);
-                spanString.setSpan(span, currentposition, currentposition + temtext.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-            }
-        }
-        //设置给view显示出来
-        edittext.setText(spanString);
     }
 
     /**
@@ -339,33 +233,6 @@ public class AndroidUtils {
         textView.setMovementMethod(LinkMovementMethod.getInstance());//开始响应点击事件
     }
 
-
-    public static void setTextColorAndClick(final TextView textView, String content, String colorTextArray[], final int colors,final boolean line,final OnClickTextListener listener) {
-        SpannableString spanString = new SpannableString(content);
-
-        for (int i = 0; i < colorTextArray.length; i++) {
-            //将这个Span应用于指定范围的字体
-            spanString.setSpan(new ClickableSpan() {
-                @Override
-                public void updateDrawState(TextPaint ds) {
-                    super.updateDrawState(ds);
-                    ds.setColor(colors);//设置文本颜色
-                    ds.setUnderlineText(line);      //设置下划线
-                }
-
-                @Override
-                public void onClick(View widget) {
-                    if (null != listener) {
-                        listener.onclick(widget);
-                    }
-                }
-            }, 0, colorTextArray[i].length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-        }
-        //设置给view显示出来
-        textView.setText(spanString);
-        textView.setHighlightColor(Color.TRANSPARENT);//去掉点击后出现的高亮显示
-        textView.setMovementMethod(LinkMovementMethod.getInstance());//开始响应点击事件
-    }
 
 
     public static View getView(Context context, int viewid) {
@@ -751,6 +618,23 @@ public class AndroidUtils {
         }
         cursor.close();
         return contactData.toString();
+    }
+
+
+    /**
+     * 获取editext文本的长度
+     *
+     * @param editText
+     * @return
+     */
+    public static int getEditTextLength(EditText editText) {
+        if (null != editText) {
+            String string = editText.getText() + "";
+            if (string.trim().length() > 0) {
+                return string.length();
+            }
+        }
+        return 0;
     }
 
 }

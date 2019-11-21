@@ -26,12 +26,20 @@ import java.util.List;
  **/
 @SuppressWarnings("all")
 public class PermissionUtils {
+
     private static PermissionUtils permissionUtils;
     private Activity mActivity;
     //请求权限索引
     private static int mPermissionIdx = 0x10;
     //请求权限运行列表
     private static SparseArray<CallBackListener> mPermissions = new SparseArray<>();
+
+
+
+    private String sureText = "sure";
+    private String cancleText = "cancle";
+
+
 
     private PermissionUtils() {
     }
@@ -45,10 +53,8 @@ public class PermissionUtils {
                 }
             }
         }
-
         return permissionUtils;
     }
-
 
     /**
      * 危险权限组
@@ -124,6 +130,8 @@ public class PermissionUtils {
             return;
         }
         mActivity = activity;
+        sureText = mActivity.getResources().getString(R.string.sure_button);
+        cancleText = mActivity.getResources().getString(R.string.cancle_button);
         if (Build.VERSION.SDK_INT < 23) {
             runnable.onResult(true);
             return;
@@ -181,13 +189,8 @@ public class PermissionUtils {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 mActivity.requestPermissions(permissions, requestCode);
             }
-
         }
     }
-
-
-    private String sureText = "确定";
-    private String cancleText = "取消";
 
     public PermissionUtils setSuerText(String sureText) {
         this.sureText = sureText;
@@ -265,7 +268,7 @@ public class PermissionUtils {
     /**
      * 跳转到权限设置界面
      */
-    public  void toAppSetting(Context context) {
+    public  void toSystemSetting(Context context) {
         Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         if (Build.VERSION.SDK_INT >= 9) {
@@ -278,6 +281,5 @@ public class PermissionUtils {
         }
         context.startActivity(intent);
     }
-
 
 }

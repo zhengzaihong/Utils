@@ -9,6 +9,7 @@ import android.os.Message;
  * 加载对话框帮助类
  */
 public class DialogUtil {
+
     ProgressDialog progressDialog = null;
     private Activity mActivity;
 

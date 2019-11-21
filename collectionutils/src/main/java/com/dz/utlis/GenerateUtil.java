@@ -11,6 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  **/
 
 public class GenerateUtil {
+
     private static final AtomicInteger integer = new AtomicInteger(0);
 
     public static String getId() {

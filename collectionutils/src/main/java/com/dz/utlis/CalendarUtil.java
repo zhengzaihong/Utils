@@ -35,7 +35,7 @@ public class CalendarUtil {
      * @param year 传递下面几年 如2018 传year=1 即 获取的为2019
      * @return 返回当前年月的下一年当前月
      */
-    public static int[] getnextyear(int year) {
+    public static int[] getNextYear(int year) {
         Calendar calendar = Calendar.getInstance();
         return new int[]{calendar.get(Calendar.YEAR)+year, calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH)};
     }
@@ -44,7 +44,7 @@ public class CalendarUtil {
      * @param year 传递下面几年 如2018 传year=1 即 获取的为2019
      * @return 返回当前年月的下一年第一月
      */
-    public static int[] getnextyeartofirst(int year) {
+    public static int[] getNextYeartoFirst(int year) {
         Calendar calendar = Calendar.getInstance();
         return new int[]{calendar.get(Calendar.YEAR)+year, 1, calendar.get(Calendar.DAY_OF_MONTH)};
     }

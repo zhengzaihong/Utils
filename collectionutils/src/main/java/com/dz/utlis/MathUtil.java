@@ -113,7 +113,7 @@ public class MathUtil {
      * @param num   保留几位
      * @return 返回保留几位的数,四舍五入。
      */
-    public static String persistValue(double value, int num) {
+    public static String persist(double value, int num) {
         return String.format("%." + num + "f", value);
     }
 

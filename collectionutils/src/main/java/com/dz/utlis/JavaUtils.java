@@ -11,6 +11,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -65,9 +66,37 @@ public class JavaUtils {
         }
         return valueMap;
     }
+    /**
+     * 按照顺序添加 和取值
+     * @param jsonString json字符串
+     * @return 将json字符串转换成map的集合
+     */
+    public static LinkedHashMap getLinkMap4Json(String jsonString) {
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(jsonString);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Iterator keyIter = jsonObject.keys();
+        String key;
+        Object value;
+        LinkedHashMap valueMap = new LinkedHashMap();
+        while (keyIter.hasNext()) {
+            key = (String) keyIter.next();
+            try {
+                value = jsonObject.get(key);
+                valueMap.put(key, value);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return valueMap;
+    }
 
 
     /**
+     * 隐藏电话的中间部分
      * @return 返回中间部分被隐藏的字符串
      */
     public static String getPhoneHide(String number) {
@@ -80,28 +109,31 @@ public class JavaUtils {
                     continue;
                 }
                 buffer.append(number.charAt(i));
-
             }
         }
         return buffer.toString();
     }
 
+
     /**
-     * @return 只返回后面部分显示的
+     * 隐藏身份证的中间部分
+     * @param idCard
+     * @return
      */
-    public static String getPhoneStartHide(String number) {
+    public static String getIdCardHide(String idCard) {
         StringBuffer buffer = new StringBuffer("");
-        if (number.length() > 10) {
-            for (int i = 0; i < number.length(); i++) {
-                if (i >= 0 && i < 7) {
+        if (idCard.length() > 15) {
+            for (int i = 0; i < idCard.length(); i++) {
+                if (i > 3 && i < 14) {
                     buffer.append("*");
                     continue;
                 }
-                buffer.append(number.charAt(i));
+                buffer.append(idCard.charAt(i));
             }
         }
         return buffer.toString();
     }
+
 
 
     /**

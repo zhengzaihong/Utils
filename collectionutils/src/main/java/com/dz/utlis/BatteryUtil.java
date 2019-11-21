@@ -11,10 +11,10 @@ import android.os.BatteryManager;
  * email:1096877329@qq.com
  * creat_date: 2018/5/27
  * creat_time: 2:19
- * describe: 获取手机的一些信息
+ * describe: 获取手机的电池信息
  **/
 
-public class MobileUtil {
+public class BatteryUtil {
 
     private MessageReceiver mMessageReceivers;
     public final String MESSAGE_RECEIVED_ACTION = "MESSAGE_RECEIVED_ACTION_MobileUtil";
