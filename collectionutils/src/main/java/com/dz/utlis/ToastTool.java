@@ -58,6 +58,9 @@ public class ToastTool {
      */
     public void show(String msg) {
 
+        if(null == application){
+             throw new IllegalArgumentException("Please initialize ToastTool before use");
+        }
         if (System.currentTimeMillis() - toastTime <= config.getInterval()) {
             toastTime = System.currentTimeMillis();
             return;
@@ -87,6 +90,10 @@ public class ToastTool {
      */
 
     public void show(String msg,ToastConfig config) {
+
+        if(null == application){
+            throw new IllegalArgumentException("Please initialize ToastTool before use");
+        }
 
         if (System.currentTimeMillis() - toastTime <= config.getInterval()) {
             toastTime = System.currentTimeMillis();
