@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">CollectionUtils</string>
     <string name="sure_button">sure</string>
     <string name="cancle_button">cancle</string>
 </resources>

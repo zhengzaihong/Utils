@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.dz.utlis.*
 import kotlinx.android.synthetic.main.activity_main.*
-import android.graphics.Typeface
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,8 +35,6 @@ class MainActivity : AppCompatActivity() {
         wartermark_pic.setImageBitmap(textBitmap)
 
         ToastTool.get().show("ssdnsidsidnsidnsi")
-
-
 
     }
 }
