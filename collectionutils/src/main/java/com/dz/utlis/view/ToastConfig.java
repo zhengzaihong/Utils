@@ -1,6 +1,7 @@
 package com.dz.utlis.view;
 
 import android.graphics.Color;
+import android.view.Gravity;
 
 /**
  * creat_user: zhengzaihong
@@ -38,6 +39,9 @@ public class ToastConfig {
 
     // 设置圆角类型
     private RadiusType radiusType = RadiusType.ALL_RADIUS;
+
+    //toast显示的位置
+    private int gravity = Gravity.CENTER;
 
     public enum RadiusType {
         /**
@@ -167,6 +171,16 @@ public class ToastConfig {
 
     public ToastConfig setRadiusType(RadiusType radiusType) {
         this.radiusType = radiusType;
+        return this;
+    }
+
+    public int getGravity() {
+        return gravity;
+    }
+
+    public ToastConfig setGravity(int gravity) {
+        this.gravity = gravity;
+
         return this;
     }
 }

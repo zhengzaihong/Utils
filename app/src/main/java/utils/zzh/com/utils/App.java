@@ -2,6 +2,7 @@ package utils.zzh.com.utils;
 
 import android.app.Application;
 import android.graphics.Color;
+import android.view.Gravity;
 
 import com.dz.utlis.FontUtils;
 import com.dz.utlis.JavaUtils;
@@ -25,18 +26,19 @@ public class App extends Application {
 
         // Toast 配置
         ToastConfig config = new ToastConfig()
-            .setInterval(2000)
-            .setRadiusBg((int) ScreenUtils.dip2px(this,30))
-            .setToastTextColor(Color.RED)
-            .setToastViewGroupBgColor(Color.GREEN)
-            .setToastTextSize(16)
-            .setBgPadding((int) ScreenUtils.dip2px(this,15))
-            .setShortToast(false)
-            .setStrokeWidth(3)
-            .setRadiusType(ToastConfig.RadiusType.ALL_RADIUS)
-            .setStrokeColor(Color.GREEN);
+                .setInterval(2000)
+                .setRadiusBg((int) ScreenUtils.dip2px(this, 30))
+                .setToastTextColor(Color.RED)
+                .setToastViewGroupBgColor(Color.GREEN)
+                .setToastTextSize(16)
+                .setBgPadding((int) ScreenUtils.dip2px(this, 15))
+                .setGravity(Gravity.CENTER)
+                .setShortToast(false)
+                .setStrokeWidth(3)
+                .setRadiusType(ToastConfig.RadiusType.ALL_RADIUS)
+                .setStrokeColor(Color.GREEN);
 
         //初始化 Toast工具
-        ToastTool.get().initConfig(this,config);
+        ToastTool.get().initConfig(this, config);
     }
 }

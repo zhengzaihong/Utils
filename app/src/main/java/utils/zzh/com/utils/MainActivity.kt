@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         wartermark_pic.setImageBitmap(textBitmap)
 
-        ToastTool.get().show("ssdnsidsidnsidnsi")
+        ToastTool.showContent("ssdnsidsidnsidnsi")
 
     }
 }

@@ -34,7 +34,7 @@ public class ShareFileUtils {
      */
     public static void shareContent(Context context, String content) {
         if (TextUtils.isEmpty(content)) {
-            Log.e(TAG,"分享的内容不能为空");
+            ToastTool.get().show("分享的内容不能为空");
             return;
         }
 
@@ -53,7 +53,7 @@ public class ShareFileUtils {
      */
     public static void shareFile(Context context, String file) {
         if (!FileUtils.isFile(file)) {
-            Log.e(TAG,"分享的文件地址不对");
+            ToastTool.get().show("分享文件地址不正确");
             return;
         }
 
