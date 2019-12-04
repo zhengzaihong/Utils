@@ -19,16 +19,9 @@ import android.view.Window;
 
 public class MeasureUtils {
 
-    //获取当前屏幕密度
-    public static int getcurrentDimens(Activity activity) {
-        DisplayMetrics metrics = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        int mDensity = metrics.densityDpi;
-        return mDensity;
-    }
 
     //获取控件在屏幕上的坐标
-    public static int[] getViewWhereOnScreen(View v) {
+    public static int[] getViewLocation(View v) {
         int[] location = new int[2];
         v.getLocationOnScreen(location);
         int x = location[0];

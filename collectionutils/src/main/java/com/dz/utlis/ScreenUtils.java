@@ -278,4 +278,17 @@ public class ScreenUtils
 
 	}
 
+
+	/**
+	 * 获取当前屏幕密度
+	 * @param activity
+	 * @return
+	 */
+	public static int getcurrentDimens(Activity activity) {
+		DisplayMetrics metrics = new DisplayMetrics();
+		activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+		int mDensity = metrics.densityDpi;
+		return mDensity;
+	}
+
 }

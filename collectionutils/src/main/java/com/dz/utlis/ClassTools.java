@@ -18,7 +18,7 @@ import java.util.List;
 public class ClassTools {
 
     //记录当前app的act
-    private static List<Activity> activities = new ArrayList<>();
+    public static List<Activity> activities = new ArrayList<>();
 
 
     public static void toAct(Context mContext, Class<?> cls) {
@@ -83,10 +83,8 @@ public class ClassTools {
      * @param cls
      */
     public static void clearClass(Class... cls) {
-
         for (int i = 0; i < cls.length; i++) {
             String newClass = cls[i].getPackage().getName() + "." + cls[i].getClass().getSimpleName();
-
             for (int j = 0; j < activities.size(); j++) {
                 //获取类的完全类路径
                 String oldClass = activities.get(i).getPackageName() + "." + activities.get(i).getClass().getSimpleName();
@@ -94,25 +92,6 @@ public class ClassTools {
                 if (newClass.equals(oldClass)) {
                     activities.get(i).finish();
                 }
-            }
-        }
-
-    }
-
-    /**
-     * 只保留指定的act
-     *
-     * @param cls
-     */
-    public static void holdOnClass(Class cls) {
-
-        String newClass = cls.getPackage().getName() + "." + cls.getClass().getSimpleName();
-        for (int j = 0; j < activities.size(); j++) {
-            //获取类的完全类路径
-            String oldClass = activities.get(j).getPackageName() + "." + activities.get(j).getClass().getSimpleName();
-
-            if (!newClass.equals(oldClass)) {
-                activities.get(j).finish();
             }
         }
     }
