@@ -56,23 +56,23 @@ public class TimeUtil {
 
     /**
      * @param time
-     * @param patten yyyy/MM/dd HH:mm:ss
+     * @param pattern yyyy/MM/dd HH:mm:ss
      * @return 将时间戳转成时间
      */
-    public static String stampstoTime(String time, String patten) {
+    public static String stampstoTime(String time, String pattern) {
         String t = "";
         try {
-            t = new SimpleDateFormat(patten).format(new Date(Long.parseLong(time) * 1000L));
+            t = new SimpleDateFormat(pattern).format(new Date(Long.parseLong(time) * 1000L));
         } catch (Exception e) {
             e.printStackTrace();
             t = stampstoTime(currentTimeStamp().toString(), "yyyy-MM-dd");
         }
         return t;
     }
-    public static String stampstoTime(Long time, String patten) {
+    public static String stampstoTime(Long time, String pattern) {
         String t = "";
         try {
-            t = new SimpleDateFormat(patten).format(new Date(time * 1000L));
+            t = new SimpleDateFormat(pattern).format(new Date(time * 1000L));
         } catch (Exception e) {
             e.printStackTrace();
             t = stampstoTime(currentTimeStamp().toString(), "yyyy-MM-dd");
@@ -82,12 +82,12 @@ public class TimeUtil {
 
     /**
      *
-     * @param patten
+     * @param pattern
      * @param day
      * @return 返回几天后的时间戳
      */
-    public static String getAfterDayTimeStamp(String patten, int day) {
-        return TimeUtil.transForMilliSecond(getSpecifiedDayAfter(cstToYmd(new Date().toString()), patten, day), "yyyy-MM-dd").toString();
+    public static String getAfterDayTimeStamp(String pattern, int day) {
+        return TimeUtil.transForMilliSecond(getSpecifiedDayAfter(cstToYmd(new Date().toString()), pattern, day), "yyyy-MM-dd").toString();
     }
 
     public static String cstToYmd(String dateStr) {
@@ -107,13 +107,13 @@ public class TimeUtil {
 
     /**
      * 把时间转换成Date
-     * @param patten
+     * @param pattern
      * @param time
      * @return
      */
-    public static Date getDate(String patten, String time) {
+    public static Date getDate(String pattern, String time) {
 
-        SimpleDateFormat format = new SimpleDateFormat(patten);
+        SimpleDateFormat format = new SimpleDateFormat(pattern);
         Date date = null;
 
         try {
@@ -312,15 +312,15 @@ public class TimeUtil {
 
     /**
      * @param specifiedDay 时间格式字符串 2019-12-10
-     * @param patten       设置返回的时间格式 yyyy-MM-dd
+     * @param pattern       设置返回的时间格式 yyyy-MM-dd
      * @param days         设置几天前
      * @return 返回几天前的时间
      */
-    public static String getSpecifiedDayBefore(String specifiedDay, String patten, int days) {
+    public static String getSpecifiedDayBefore(String specifiedDay, String pattern, int days) {
         Calendar c = Calendar.getInstance();
         Date date = null;
         try {
-            date = new SimpleDateFormat(patten).parse(specifiedDay);
+            date = new SimpleDateFormat(pattern).parse(specifiedDay);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -328,21 +328,21 @@ public class TimeUtil {
         int day = c.get(Calendar.DATE);
         c.set(Calendar.DATE, day - days);
 
-        String dayBefore = new SimpleDateFormat(patten).format(c.getTime());
+        String dayBefore = new SimpleDateFormat(pattern).format(c.getTime());
         return dayBefore;
     }
 
     /**
      * @param specifiedDay 时间格式字符串
-     * @param patten       设置返回的时间格式
+     * @param pattern       设置返回的时间格式
      * @param days         设置几天后
      * @return 返回几天后的时间
      */
-    public static String getSpecifiedDayAfter(String specifiedDay, String patten, int days) {
+    public static String getSpecifiedDayAfter(String specifiedDay, String pattern, int days) {
         Calendar c = Calendar.getInstance();
         Date date = null;
         try {
-            date = new SimpleDateFormat(patten).parse(specifiedDay);
+            date = new SimpleDateFormat(pattern).parse(specifiedDay);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -350,7 +350,7 @@ public class TimeUtil {
         int day = c.get(Calendar.DATE);
         c.set(Calendar.DATE, day + days);
 
-        String dayAfter = new SimpleDateFormat(patten).format(c.getTime());
+        String dayAfter = new SimpleDateFormat(pattern).format(c.getTime());
         return dayAfter;
     }
 
@@ -588,8 +588,8 @@ public class TimeUtil {
      * @param time
      * @return
      */
-    public static String toTureTime(String time, String patten) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat(patten);
+    public static String toTureTime(String time, String pattern) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
         String result = dateFormat.format(new Date(System.currentTimeMillis()));
         String now = result;
         int artilcYear = Integer.parseInt(time.substring(0, 4));

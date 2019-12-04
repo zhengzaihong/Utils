@@ -21,30 +21,28 @@ import static com.dz.utlis.view.ToastConfig.RadiusType.RIGHT_TOP_RADIUS;
  * Email:1096877329@qq.com
  * creat_date: 2019/11/20
  * creat_time: 16:42
- * describe Toast的背景View
+ * describe Toast的背景View 支持圆角
  **/
-public class ToastViewGroup extends RelativeLayout {
-
+public class RadiusRelativeLayout extends RelativeLayout {
 
     private ToastConfig config = new ToastConfig();
 
-    public ToastViewGroup(Context context) {
-        this(context,null);
+    public RadiusRelativeLayout(Context context) {
+        this(context, null);
     }
 
-    public ToastViewGroup(Context context, AttributeSet attrs) {
-        this(context, attrs,0);
+    public RadiusRelativeLayout(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
     }
 
-    public ToastViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RadiusRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
         initView();
-
     }
 
     /**
      * 设置样式配置参数
+     *
      * @param configBean
      */
     public void setConfig(ToastConfig configBean) {
@@ -55,9 +53,9 @@ public class ToastViewGroup extends RelativeLayout {
 
     private void initView() {
 
-        int padding = config .getBgPadding();
+        int padding = config.getBgPadding();
 
-        this.setPadding(padding,padding,padding,padding);
+        this.setPadding(padding, padding, padding, padding);
 
         Drawable drawable = createShape(config);
 

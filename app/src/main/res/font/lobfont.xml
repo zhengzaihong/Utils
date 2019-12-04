@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!--这里引用的字体是中文字体-->
+    <font
+        android:font="@font/lobster_1_4"
+        android:fontStyle="normal"
+        android:fontWeight="100"
+        app:font="@font/lobster_1_4"
+        app:fontStyle="normal"
+        app:fontWeight="100"
+        tools:targetApi="o"/>
+    <font
+        android:font="@font/lobster_1_4"
+        android:fontStyle="italic"
+        android:fontWeight="100"
+        app:font="@font/lobster_1_4"
+        app:fontStyle="italic"
+        app:fontWeight="100"
+        tools:targetApi="o"/>
+</font-family>

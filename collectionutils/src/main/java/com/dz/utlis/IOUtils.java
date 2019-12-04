@@ -40,8 +40,10 @@ import java.util.List;
 * Email:1096877329@qq.com
 * creat_date: 2017/6/12
 * creat_time: 9:33
-* describe Io处理类 多数api 来自nohttp
+* describe Io处理类
 **/
+
+@SuppressWarnings("all")
 public class IOUtils {
 
     public static int bytesToInt(byte[] bytes) {

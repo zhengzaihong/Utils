@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
  *creat_time: 2:41
  *describe: 工具类: 字符串相关
  **/
+@SuppressWarnings("all")
 public class StringUtils {
 
     private StringUtils() {

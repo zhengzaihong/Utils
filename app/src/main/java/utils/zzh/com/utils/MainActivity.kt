@@ -36,5 +36,10 @@ class MainActivity : AppCompatActivity() {
 
         ToastTool.showContent("ssdnsidsidnsidnsi")
 
+        wartermark_pic.setOnClickListener {
+            ToastTool.showContent("ssdnsidsidnsidnsi")
+
+        }
+
     }
 }

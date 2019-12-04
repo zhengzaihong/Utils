@@ -10,4 +10,7 @@
         <item name="android:typeface">monospace</item>
     </style>
 
+    <style name="font" parent="AppTheme">
+        <item name="android:fontFamily">@font/lobfont</item>
+    </style>
 </resources>

@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <TextView
+        style="@style/font"
         android:id="@+id/sour_pic_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

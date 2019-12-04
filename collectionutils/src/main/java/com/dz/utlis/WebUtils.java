@@ -17,6 +17,8 @@ import java.io.UnsupportedEncodingException;
 * creat_time: 9:32
 * describe webview 工具类
 **/
+
+@SuppressWarnings("all")
 public class WebUtils {
     /**
      * 设置WebView
@@ -27,7 +29,7 @@ public class WebUtils {
      * @Title: setWebView
      * @Description: TODO
      */
-    public static void LoadWeb(Context context, WebView webView, String url) {
+    public static void loadWeb(Context context, WebView webView, String url) {
         setWebView(context, webView);
         webView.loadUrl(url);
     }

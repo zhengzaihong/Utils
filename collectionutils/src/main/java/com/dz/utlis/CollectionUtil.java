@@ -16,7 +16,6 @@ import java.util.Set;
  **/
 
 
-
 public class CollectionUtil {
     /**
      * List集合转换为数组

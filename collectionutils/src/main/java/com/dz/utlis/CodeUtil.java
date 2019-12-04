@@ -10,8 +10,6 @@ import java.io.UnsupportedEncodingException;
  *describe: 格式转换
  **/
 
-
-
 public class CodeUtil {
 
 	//将gbk字符串转utf-8

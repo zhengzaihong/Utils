@@ -18,7 +18,7 @@ public class WaterMarkUtil {
 
     /**
      * 设置水印图片在左上角
-     * @param Context
+     * @param context
      * @param src
      * @param watermark
      * @param paddingLeft
@@ -64,7 +64,7 @@ public class WaterMarkUtil {
 
     /**
      * 设置水印图片在右下角
-     * @param Context
+     * @param context
      * @param src
      * @param watermark
      * @param paddingRight
@@ -82,7 +82,7 @@ public class WaterMarkUtil {
     /**
      * 设置水印图片到右上角
      *
-     * @param Context
+     * @param context
      * @param src
      * @param watermark
      * @param paddingRight
@@ -99,7 +99,7 @@ public class WaterMarkUtil {
 
     /**
      * 设置水印图片到左下角
-     * @param Context
+     * @param context
      * @param src
      * @param watermark
      * @param paddingLeft
@@ -116,7 +116,7 @@ public class WaterMarkUtil {
     /**
      * 设置水印图片到中间
      *
-     * @param Context
+     * @param context
      * @param src
      * @param watermark
      * @return
@@ -155,8 +155,8 @@ public class WaterMarkUtil {
      * @param text
      * @param size
      * @param color
-     * @param paddingLeft
-     * @param paddingTop
+     * @param paddingRight
+     * @param paddingBottom
      * @return
      */
     public static Bitmap drawTextToRightBottom(Context context, Bitmap bitmap, String text,

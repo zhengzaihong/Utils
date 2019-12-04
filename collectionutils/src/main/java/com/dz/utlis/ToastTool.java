@@ -5,8 +5,8 @@ import android.view.Gravity;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dz.utlis.view.RadiusRelativeLayout;
 import com.dz.utlis.view.ToastConfig;
-import com.dz.utlis.view.ToastViewGroup;
 
 /**
  * creat_user: zhengzaihong
@@ -16,6 +16,7 @@ import com.dz.utlis.view.ToastViewGroup;
  * describe 一个单例吐司
  * 配合本库的 ToastUtil 可完成炫酷toast
  **/
+@SuppressWarnings("all")
 public class ToastTool {
 
     private static ToastTool toastTool;
@@ -26,7 +27,7 @@ public class ToastTool {
 
     private Application application;
 
-    //是否开启 Toast,在一些特殊场合可能需要动态 修改提不提示问题，新增该标志位
+    //是否开启 Toast,在一些特殊场合可能需要动态 修改提不提示问题标志位
 
     private static boolean enableToast = true;
 
@@ -63,7 +64,6 @@ public class ToastTool {
      */
     public void show(String msg) {
         showContent(msg, config);
-
     }
 
 
@@ -87,8 +87,6 @@ public class ToastTool {
     public static void showContent(String msg) {
         if(null!=toastTool){
             toastTool.show(msg);
-        }else {
-            throw new IllegalArgumentException("Please initialize ToastTool before use");
         }
     }
 
@@ -102,25 +100,23 @@ public class ToastTool {
             throw new IllegalArgumentException("Please initialize ToastTool before use");
         }
 
-        if (System.currentTimeMillis() - toastTime <= config.getInterval()) {
+        if (System.currentTimeMillis() - toastTime >= config.getInterval()) {
             toastTime = System.currentTimeMillis();
-            return;
+
+            RadiusRelativeLayout toastViewGroup = (RadiusRelativeLayout) AndroidUtils.getView(application, R.layout.layout_toast_view);
+            toastViewGroup.setConfig(config);
+
+            TextView tvContent = toastViewGroup.findViewById(R.id.tv_contnet);
+            tvContent.setTextColor(config.getToastTextColor());
+            tvContent.setTextSize(config.getToastTextSize());
+
+            tvContent.setGravity(Gravity.CENTER);
+            tvContent.setText(msg);
+
+            ToastUtil toastUtil = new ToastUtil(application, toastViewGroup, config.isShortToast() ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG);
+            toastUtil.getToast().setGravity(config.getGravity(), 0, 0);
+            toastUtil.show();
         }
-
-        ToastViewGroup toastViewGroup = (ToastViewGroup) AndroidUtils.getView(application, R.layout.layout_toast_view);
-        toastViewGroup.setConfig(config);
-
-        TextView tvContent = toastViewGroup.findViewById(R.id.tv_contnet);
-        tvContent.setTextColor(config.getToastTextColor());
-        tvContent.setTextSize(config.getToastTextSize());
-
-        tvContent.setGravity(Gravity.CENTER);
-        tvContent.setText(msg);
-
-        ToastUtil toastUtil = new ToastUtil(application, toastViewGroup, config.isShortToast() ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG);
-        toastUtil.getToast().setGravity(config.getGravity(), 0, 0);
-        toastUtil.show();
     }
-
 
 }

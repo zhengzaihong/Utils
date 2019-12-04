@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
 
+import com.dz.utlis.bean.Battery;
+import com.dz.utlis.interfaces.OnBatteryChangeListener;
+
 /**
  * creat_user: zhengzaihong
  * email:1096877329@qq.com
@@ -30,7 +33,7 @@ public class BatteryUtil {
     private String BatteryTemp;
     public String info;
 
-    private MobileBean mobileBean = new MobileBean();
+    private Battery mobileBean = new Battery();
 
     public void registerMessageReceiver(Context context) {
         mMessageReceivers = new MessageReceiver();
@@ -95,94 +98,18 @@ public class BatteryUtil {
                 mobileBean.setBatteryT((BatteryT * 0.1));
                 mobileBean.setInfo(info);
                 if (null != listener) {
-                    listener.changelistener(mobileBean);
+                    listener.changeListener(mobileBean);
                 }
             }
         }
     }
 
-    private WatchMobleChangeListener listener;
+    private OnBatteryChangeListener listener;
 
-    public void setWatchMobleChangeListener(WatchMobleChangeListener listener) {
+    public void setOnBatteryChangeListener(OnBatteryChangeListener listener) {
         this.listener = listener;
     }
 
-    public interface WatchMobleChangeListener {
-        void changelistener(MobileBean mobileBean);
-    }
-
-   public class MobileBean {
-        // 目前电量
-        private int BatteryN;
-        // 电池电压
-        private int BatteryV;
-        // 电池温度
-        private double BatteryT;
-        // 电池状态
-        private String BatteryStatus;
-        // 电池使用情况
-        private String BatteryTemp;
-        public String info;
-
-        @Override
-        public String toString() {
-            return "MobileBean{" +
-                    "BatteryN=" + BatteryN +
-                    ", BatteryV=" + BatteryV +
-                    ", BatteryT=" + BatteryT +
-                    ", BatteryStatus='" + BatteryStatus + '\'' +
-                    ", BatteryTemp='" + BatteryTemp + '\'' +
-                    ", info='" + info + '\'' +
-                    '}';
-        }
-
-        public String getInfo() {
-            return info;
-        }
-
-        public void setInfo(String info) {
-            this.info = info;
-        }
 
 
-        public int getBatteryN() {
-            return BatteryN;
-        }
-
-        public void setBatteryN(int batteryN) {
-            BatteryN = batteryN;
-        }
-
-        public int getBatteryV() {
-            return BatteryV;
-        }
-
-        public void setBatteryV(int batteryV) {
-            BatteryV = batteryV;
-        }
-
-        public double getBatteryT() {
-            return BatteryT;
-        }
-
-        public void setBatteryT(double batteryT) {
-            BatteryT = batteryT;
-        }
-
-        public String getBatteryStatus() {
-            return BatteryStatus;
-        }
-
-        public void setBatteryStatus(String batteryStatus) {
-            BatteryStatus = batteryStatus;
-        }
-
-        public String getBatteryTemp() {
-            return BatteryTemp;
-        }
-
-        public void setBatteryTemp(String batteryTemp) {
-            BatteryTemp = batteryTemp;
-        }
-    }
 }

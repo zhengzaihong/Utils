@@ -22,19 +22,22 @@ import java.util.List;
  * creat_date: 2019/11/20
  * creat_time: 11:26
  * describe 系统分享功能
+ * 使用该工具 请先初始化 ToastTool 工具，或者禁用 ToastTool提示
  **/
+@SuppressWarnings("all")
 public class ShareFileUtils {
 
     private static final String TAG = "---ShareFileUtils---";
 
     /**
      * 分享文本
+     *
      * @param context
      * @param content
      */
     public static void shareContent(Context context, String content) {
         if (TextUtils.isEmpty(content)) {
-            ToastTool.get().show("分享的内容不能为空");
+            ToastTool.showContent("分享内容不能为空");
             return;
         }
 
@@ -53,7 +56,7 @@ public class ShareFileUtils {
      */
     public static void shareFile(Context context, String file) {
         if (!FileUtils.isFile(file)) {
-            ToastTool.get().show("分享文件地址不正确");
+            ToastTool.showContent("分享文件地址不正确");
             return;
         }
 
@@ -93,7 +96,7 @@ public class ShareFileUtils {
         //判断是否安装微信，如果没有安装微信 又没有判断就直达微信分享是会挂掉的
         if (!isAppInstall(context, "com.tencent.mm")) {
 
-            ToastTool.get().show("您还没有安装微信");
+            ToastTool.showContent("您还没有安装微信");
 
             return;
         }
@@ -106,7 +109,7 @@ public class ShareFileUtils {
     public static void shareImageToWeChat(final Context context, List<String> pathList) {
         //判断是否安装微信，如果没有安装微信 又没有判断就直达微信分享是会挂掉的
         if (!isAppInstall(context, "com.tencent.mm")) {
-            ToastTool.get().show("您还没有安装微信");
+            ToastTool.showContent("您还没有安装微信");
             return;
         }
         shareImage(context, null, pathList, "com.tencent.mm", "com.tencent.mm.ui.tools.ShareImgUI");
@@ -117,7 +120,7 @@ public class ShareFileUtils {
      */
     public static void shareImageToWeChatFriend(Context context, String path) {
         if (!isAppInstall(context, "com.tencent.mm")) {
-            ToastTool.get().show("您还没有安装微信");
+            ToastTool.showContent("您还没有安装微信");
             return;
         }
         shareImage(context, path, null, "com.tencent.mm", "com.tencent.mm.ui.tools.ShareToTimeLineUI");
@@ -128,7 +131,7 @@ public class ShareFileUtils {
      */
     public static void shareImageToWeChatFriend(Context context, List<String> pathList) {
         if (!isAppInstall(context, "com.tencent.mm")) {
-            ToastTool.get().show("您还没有安装微信");
+            ToastTool.showContent("您还没有安装微信");
             return;
         }
         shareImage(context, null, pathList, "com.tencent.mm", "com.tencent.mm.ui.tools.ShareToTimeLineUI");
@@ -139,7 +142,7 @@ public class ShareFileUtils {
      */
     public static void shareImageToQQ(Context context, String path) {
         if (!isAppInstall(context, "com.tencent.mobileqq")) {
-            ToastTool.get().show("您还没有安装QQ");
+            ToastTool.showContent("您还没有安装QQ");
             return;
         }
         shareImage(context, path, null, "com.tencent.mobileqq", "com.tencent.mobileqq.activity.JumpActivity");
@@ -151,7 +154,7 @@ public class ShareFileUtils {
      */
     public static void shareImageToQQ(Context context, List<String> pathList) {
         if (!isAppInstall(context, "com.tencent.mobileqq")) {
-            ToastTool.get().show("您还没有安装QQ");
+            ToastTool.showContent("您还没有安装QQ");
             return;
         }
         shareImage(context, null, pathList, "com.tencent.mobileqq", "com.tencent.mobileqq.activity.JumpActivity");
@@ -163,7 +166,7 @@ public class ShareFileUtils {
      */
     public static void shareImageToQZone(Context context, String path) {
         if (!isAppInstall(context, "com.qzone")) {
-            ToastTool.get().show("您还没有安装QQ空间");
+            ToastTool.showContent("您还没有安装QQ空间");
             return;
         }
         shareImage(context, path, null, "com.qzone", "com.qzonex.module.operation.ui.QZonePublishMoodActivity");
@@ -175,7 +178,7 @@ public class ShareFileUtils {
      */
     public static void shareImageToQZone(Context context, List<String> pathList) {
         if (!isAppInstall(context, "com.qzone")) {
-            ToastTool.get().show("您还没有安装QQ空间");
+            ToastTool.showContent("您还没有安装QQ空间");
             return;
         }
         shareImage(context, null, pathList, "com.qzone", "com.qzonex.module.operation.ui.QZonePublishMoodActivity");
@@ -186,7 +189,7 @@ public class ShareFileUtils {
      */
     public static void shareImageToWeibo(Context context, String path) {
         if (!isAppInstall(context, "com.sina.weibo")) {
-            ToastTool.get().show("您还没有安装新浪微博");
+            ToastTool.showContent("您还没有安装新浪微博");
             return;
         }
         shareImage(context, path, null, "com.sina.weibo", "com.sina.weibo.EditActivity");
@@ -198,7 +201,7 @@ public class ShareFileUtils {
      */
     public static void shareImageToWeibo(Context context, List<String> pathList) {
         if (!isAppInstall(context, "com.sina.weibo")) {
-            ToastTool.get().show("您还没有安装新浪微博");
+            ToastTool.showContent("您还没有安装新浪微博");
             return;
         }
         shareImage(context, null, pathList, "com.sina.weibo", "com.sina.weibo.EditActivity");
@@ -245,7 +248,7 @@ public class ShareFileUtils {
      */
     private static void shareImage(Context context, String path, List<String> pathList, String pkg, String cls) {
         if (path == null && pathList == null) {
-            ToastTool.get().show("找不到您要分享的图片文件");
+            ToastTool.showContent("找不到您要分享的图片文件");
             return;
         }
 
@@ -255,7 +258,7 @@ public class ShareFileUtils {
             if (path != null) {
                 //单张图片
                 if (!FileUtils.isFile(path)) {
-                    ToastTool.get().show("图片不存在，请检查后重试");
+                    ToastTool.showContent("图片不存在，请检查后重试");
                     return;
                 }
 
@@ -280,7 +283,7 @@ public class ShareFileUtils {
                 ArrayList<Uri> uriList = new ArrayList<>();
                 for (int i = 0; i < pathList.size(); i++) {
                     if (!FileUtils.isFile(pathList.get(i))) {
-                        ToastTool.get().show("第" + (i + 1) + "张图片不存在，请检查后重试");
+                        ToastTool.showContent("第" + (i + 1) + "张图片不存在，请检查后重试");
                         return;
                     }
                     uriList.add(Uri.fromFile(new File(pathList.get(i))));
@@ -306,7 +309,7 @@ public class ShareFileUtils {
             }
 
         } catch (Exception e) {
-            ToastTool.get().show("分享失败，未知错误");
+            ToastTool.showContent("分享失败，未知错误");
 
         }
     }
