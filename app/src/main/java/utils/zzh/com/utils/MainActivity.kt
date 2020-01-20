@@ -34,10 +34,10 @@ class MainActivity : AppCompatActivity() {
 
         wartermark_pic.setImageBitmap(textBitmap)
 
-        ToastTool.showContent("ssdnsidsidnsidnsi")
+        ToastTool.show("ssdnsidsidnsidnsi")
 
         wartermark_pic.setOnClickListener {
-            ToastTool.showContent("ssdnsidsidnsidnsi")
+            ToastTool.show("ssdnsidsidnsidnsi")
 
         }
 

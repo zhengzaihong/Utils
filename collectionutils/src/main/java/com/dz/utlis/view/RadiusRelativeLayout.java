@@ -7,14 +7,16 @@ import android.graphics.drawable.StateListDrawable;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 
-import static com.dz.utlis.view.ToastConfig.RadiusType.ALL_RADIUS;
-import static com.dz.utlis.view.ToastConfig.RadiusType.LEFT_BOTTOM_RADIUS;
-import static com.dz.utlis.view.ToastConfig.RadiusType.LEFT_TOP_BOTTOM_RADIUS;
-import static com.dz.utlis.view.ToastConfig.RadiusType.LEFT_TOP_RADIUS;
-import static com.dz.utlis.view.ToastConfig.RadiusType.NONE_RADIUS;
-import static com.dz.utlis.view.ToastConfig.RadiusType.RIGHT_BOOTOM_RADIUS;
-import static com.dz.utlis.view.ToastConfig.RadiusType.RIGHT_TOP_BOOTOM_RADIUS;
-import static com.dz.utlis.view.ToastConfig.RadiusType.RIGHT_TOP_RADIUS;
+import static com.dz.utlis.ToastTool.*;
+import static com.dz.utlis.ToastTool.RadiusType.ALL_RADIUS;
+import static com.dz.utlis.ToastTool.RadiusType.LEFT_BOTTOM_RADIUS;
+import static com.dz.utlis.ToastTool.RadiusType.LEFT_TOP_BOTTOM_RADIUS;
+import static com.dz.utlis.ToastTool.RadiusType.LEFT_TOP_RADIUS;
+import static com.dz.utlis.ToastTool.RadiusType.NONE_RADIUS;
+import static com.dz.utlis.ToastTool.RadiusType.RIGHT_BOOTOM_RADIUS;
+import static com.dz.utlis.ToastTool.RadiusType.RIGHT_TOP_BOOTOM_RADIUS;
+import static com.dz.utlis.ToastTool.RadiusType.RIGHT_TOP_RADIUS;
+
 
 /**
  * creat_user: zhengzaihong
@@ -25,7 +27,7 @@ import static com.dz.utlis.view.ToastConfig.RadiusType.RIGHT_TOP_RADIUS;
  **/
 public class RadiusRelativeLayout extends RelativeLayout {
 
-    private ToastConfig config = new ToastConfig();
+    private Options options;
 
     public RadiusRelativeLayout(Context context) {
         this(context, null);
@@ -37,27 +39,21 @@ public class RadiusRelativeLayout extends RelativeLayout {
 
     public RadiusRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        initView();
     }
 
-    /**
-     * 设置样式配置参数
-     *
-     * @param configBean
-     */
-    public void setConfig(ToastConfig configBean) {
-        this.config = configBean;
-        // 设置背景
+
+    public void setOptions(Options options) {
+        this.options = options;
         initView();
     }
 
     private void initView() {
 
-        int padding = config.getBgPadding();
+        int padding = options.getPadding();
 
         this.setPadding(padding, padding, padding, padding);
 
-        Drawable drawable = createShape(config);
+        Drawable drawable = createShape(options);
 
         StateListDrawable stateListDrawable = new StateListDrawable();
 
@@ -67,10 +63,10 @@ public class RadiusRelativeLayout extends RelativeLayout {
     }
 
 
-    public static GradientDrawable createShape(ToastConfig config) {
+    public static GradientDrawable createShape(Options options) {
         GradientDrawable drawable = new GradientDrawable();
-        ToastConfig.RadiusType radiusType = config.getRadiusType();
-        float radius = config.getRadiusBg();
+        RadiusType radiusType = options.getRadiusType();
+        float radius = options.getRadius();
         if (radiusType == LEFT_TOP_BOTTOM_RADIUS) {
             //1、2两个参数表示左上角，3、4表示右上角，5、6表示右下角，7、8表示左下角
             drawable.setCornerRadii(new float[]{radius, radius, 0, 0, 0, 0, radius, radius});
@@ -91,9 +87,9 @@ public class RadiusRelativeLayout extends RelativeLayout {
             drawable.setCornerRadius(0);
         }
         // 设置背景颜色
-        drawable.setColor(config.getToastViewGroupBgColor());
+        drawable.setColor(options.getBackGroundColor());
         // 设置边框颜色
-        drawable.setStroke(config.getStrokeWidth(), config.getStrokeColor());
+        drawable.setStroke(options.getStrokeWidth(), options.getStrokeColor());
         return drawable;
     }
 

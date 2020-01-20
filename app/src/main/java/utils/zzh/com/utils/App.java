@@ -8,7 +8,6 @@ import com.dz.utlis.FontUtils;
 import com.dz.utlis.JavaUtils;
 import com.dz.utlis.ScreenUtils;
 import com.dz.utlis.ToastTool;
-import com.dz.utlis.view.ToastConfig;
 
 public class App extends Application {
 
@@ -20,25 +19,23 @@ public class App extends Application {
 
         FontUtils.getInstance().replaceSystemDefaultFontFromAsset(this, font); // .otf 字体文件也可
 
-
         //开启打印
         JavaUtils.isdebug = true;
 
-        // Toast 配置
-        ToastConfig config = new ToastConfig()
-                .setInterval(2000)
-                .setRadiusBg((int) ScreenUtils.dip2px(this, 30))
-                .setToastTextColor(Color.RED)
-                .setToastViewGroupBgColor(Color.GREEN)
-                .setToastTextSize(16)
-                .setBgPadding((int) ScreenUtils.dip2px(this, 15))
-                .setGravity(Gravity.CENTER)
-                .setShortToast(false)
-                .setStrokeWidth(3)
-                .setRadiusType(ToastConfig.RadiusType.ALL_RADIUS)
-                .setStrokeColor(Color.GREEN);
 
         //初始化 Toast工具
-        ToastTool.get().initConfig(this, config);
+        ToastTool.options()
+                .setInterval(2000)
+                .setRadius((int) ScreenUtils.dip2px(this, 15))
+                .setTextColor(Color.WHITE)
+                .setBackGroundColor(Color.parseColor("#e0a0d0"))
+                .setTextSize(16)
+                .setPadding((int) ScreenUtils.dip2px(this, 15))
+                .setGravity(Gravity.CENTER)
+                .setLongTime(false)
+                .setStrokeWidth(0)
+                .setRadiusType(ToastTool.RadiusType.ALL_RADIUS)
+                .setStrokeColor(Color.TRANSPARENT)
+                .build(this);
     }
 }

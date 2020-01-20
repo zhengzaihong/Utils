@@ -134,7 +134,7 @@ public class ApkUtil {
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 			//使用前注意初始化 ToastTool 工具
-			ToastTool.get().show("开始执行安装");
+			ToastTool.show("开始执行安装");
 			Log.w(TAG, "版本大于 N ，开始使用 fileProvider 进行安装");
 			intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 			Uri contentUri = FileProvider.getUriForFile(
