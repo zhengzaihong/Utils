@@ -2,7 +2,6 @@
 <com.dz.utlis.view.RadiusRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:minHeight="40dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -14,7 +13,6 @@
         android:layout_centerVertical="true"
         android:paddingRight="10dp"
         android:textSize="16sp"
-        android:layout_marginTop="2dp"
         android:paddingLeft="10dp"
         android:textColor="@android:color/white"
         tools:text="这是一个生气的故事" />

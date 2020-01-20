@@ -26,7 +26,7 @@ public class App extends Application {
         //初始化 Toast工具
         ToastTool.options()
                 .setInterval(2000)
-                .setRadius((int) ScreenUtils.dip2px(this, 15))
+                .setRadius((int) ScreenUtils.dip2px(this, 30))
                 .setTextColor(Color.WHITE)
                 .setBackGroundColor(Color.parseColor("#e0a0d0"))
                 .setTextSize(16)
