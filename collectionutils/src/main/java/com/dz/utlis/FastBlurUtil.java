@@ -15,67 +15,6 @@ import java.net.URL;
  * 高斯模糊
  */
 public class FastBlurUtil {
-    /**
-     * 根据imagepath获取bitmap
-     */
-    /**
-     * 得到本地或者网络上的bitmap url - 网络或者本地图片的绝对路径,比如:
-     * <p>
-     * A.网络路径: url="http://blog.foreverlove.us/girl2.png" ;
-     * <p>
-     * B.本地路径:url="file://mnt/sdcard/photo/image.png";
-     * <p>
-     * C.支持的图片格式 ,png, jpg,bmp,gif等等
-     *
-     * @param url
-     * @return
-     */
-    public static int IO_BUFFER_SIZE = 2 * 1024;
-
-
-    public static Bitmap GetUrlBitmap(String url, int scaleRatio) {
-
-
-        int blurRadius = 8;//通常设置为8就行。
-        if (scaleRatio <= 0) {
-            scaleRatio = 10;
-        }
-
-        Bitmap originBitmap = null;
-        InputStream in = null;
-        BufferedOutputStream out = null;
-        try {
-            in = new BufferedInputStream(new URL(url).openStream(), IO_BUFFER_SIZE);
-            final ByteArrayOutputStream dataStream = new ByteArrayOutputStream();
-            out = new BufferedOutputStream(dataStream, IO_BUFFER_SIZE);
-            copy(in, out);
-            out.flush();
-            byte[] data = dataStream.toByteArray();
-            originBitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
-
-
-            Bitmap scaledBitmap = Bitmap.createScaledBitmap(originBitmap,
-                    originBitmap.getWidth() / scaleRatio,
-                    originBitmap.getHeight() / scaleRatio,
-                    false);
-            Bitmap blurBitmap = doBlur(scaledBitmap, blurRadius, true);
-            return blurBitmap;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-
-    private static void copy(InputStream in, OutputStream out)
-            throws IOException {
-        byte[] b = new byte[IO_BUFFER_SIZE];
-        int read;
-        while ((read = in.read(b)) != -1) {
-            out.write(b, 0, read);
-        }
-    }
-
 
     //    把本地图片毛玻璃化
     public static Bitmap toBlur(Bitmap originBitmap, int scaleRatio) {

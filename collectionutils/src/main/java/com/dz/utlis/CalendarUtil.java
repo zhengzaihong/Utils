@@ -53,8 +53,6 @@ public class CalendarUtil {
 
     /**
      * 根据提供的年月日获取该月份的第一天
-     * @Description: (这里用一句话描述这个方法的作用)
-     * @Since: 2017-1-9下午2:26:57
      * @param year
      * @param monthOfYear
      * @return
@@ -79,8 +77,6 @@ public class CalendarUtil {
 
     /**
      * 根据提供的年月获取该月份的最后一天
-     * @Description: (这里用一句话描述这个方法的作用)
-     * @Since: 2017-1-9下午2:29:38
      * @param year
      * @param monthOfYear
      * @return

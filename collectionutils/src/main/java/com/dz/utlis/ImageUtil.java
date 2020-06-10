@@ -193,7 +193,7 @@ public class ImageUtil {
     }
 
 
-    private static int computeSampleSize(BitmapFactory.Options options,
+    public static int computeSampleSize(BitmapFactory.Options options,
                                          int minSideLength, int maxNumOfPixels) {
         int initialSize = computeInitialSampleSize(options, minSideLength,
                 maxNumOfPixels);
@@ -508,7 +508,7 @@ public class ImageUtil {
      * 专为Android4.4以上设计的从Uri获取文件绝对路径，以前的方法已不好使
      */
     @SuppressLint("NewApi")
-    public String getPath(final Context context, final Uri uri) {
+    public static String getPath(final Context context, final Uri uri) {
 
         final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
 
@@ -565,7 +565,7 @@ public class ImageUtil {
         return null;
     }
 
-    public String getDataColumn(Context context, Uri uri, String selection,
+    public static String getDataColumn(Context context, Uri uri, String selection,
                                 String[] selectionArgs) {
 
         Cursor cursor = null;
@@ -586,15 +586,15 @@ public class ImageUtil {
         return null;
     }
 
-    public boolean isExternalStorageDocument(Uri uri) {
+    public static boolean isExternalStorageDocument(Uri uri) {
         return "com.android.externalstorage.documents".equals(uri.getAuthority());
     }
 
-    public boolean isDownloadsDocument(Uri uri) {
+    public static boolean isDownloadsDocument(Uri uri) {
         return "com.android.providers.downloads.documents".equals(uri.getAuthority());
     }
 
-    public boolean isMediaDocument(Uri uri) {
+    public static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
 
     }

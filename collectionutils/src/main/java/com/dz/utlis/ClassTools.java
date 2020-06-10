@@ -76,23 +76,4 @@ public class ClassTools {
             }
         }
     }
-
-    /**
-     * 清除指定的act
-     *
-     * @param cls
-     */
-    public static void clearClass(Class... cls) {
-        for (int i = 0; i < cls.length; i++) {
-            String newClass = cls[i].getPackage().getName() + "." + cls[i].getClass().getSimpleName();
-            for (int j = 0; j < activities.size(); j++) {
-                //获取类的完全类路径
-                String oldClass = activities.get(i).getPackageName() + "." + activities.get(i).getClass().getSimpleName();
-
-                if (newClass.equals(oldClass)) {
-                    activities.get(i).finish();
-                }
-            }
-        }
-    }
 }

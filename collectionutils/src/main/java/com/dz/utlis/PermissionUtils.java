@@ -35,10 +35,8 @@ public class PermissionUtils {
     private static SparseArray<CallBackListener> mPermissions = new SparseArray<>();
 
 
-
     private String sureText = "sure";
     private String cancleText = "cancle";
-
 
 
     private PermissionUtils() {
@@ -258,7 +256,7 @@ public class PermissionUtils {
      *
      * @return true：已授权； false：未授权；
      */
-    public  boolean checkPermission(Context context, String permission) {
+    public boolean checkPermission(Context context, String permission) {
         if (ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED)
             return true;
         else
@@ -268,7 +266,7 @@ public class PermissionUtils {
     /**
      * 跳转到权限设置界面
      */
-    public  void toSystemSetting(Context context) {
+    public void toSystemSetting(Context context) {
         Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         if (Build.VERSION.SDK_INT >= 9) {

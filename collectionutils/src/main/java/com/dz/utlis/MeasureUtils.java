@@ -54,7 +54,7 @@ public class MeasureUtils {
         }
         return statusHeight;
     }
-    //getStatusBarHeight3 使用此方法不不會再onstart()方法之前返回 可以使用异步方式
+    //getStatusBarHeight3 使用此方法不不再onstart()方法之前返回 可以使用异步方式
     @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
     public int getStatusBarHeight3(final Activity activity){
         Rect rectangle= new Rect();
