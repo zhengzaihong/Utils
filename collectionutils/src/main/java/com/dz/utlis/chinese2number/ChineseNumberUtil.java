@@ -5,10 +5,10 @@ import android.text.TextUtils;
 import java.util.regex.Pattern;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * eamil:1096877329@qq.com
- * creat_date: 2019/5/22 0022
- * creat_time: 11:06
+ * create_date: 2019/5/22 0022
+ * create_time: 11:06
  * describe: 将具体的中文数字 字符串转成阿拉伯数字
  **/
 public class ChineseNumberUtil {

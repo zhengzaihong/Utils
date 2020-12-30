@@ -4,16 +4,16 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Window;
 
+import androidx.annotation.RequiresApi;
+
 /**
- *creat_user: zhengzaihong
+ *create_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2018/5/27
- *creat_time: 12:15
+ *create_date: 2018/5/27
+ *create_time: 12:15
  *describe: 常用测量工具
  **/
 

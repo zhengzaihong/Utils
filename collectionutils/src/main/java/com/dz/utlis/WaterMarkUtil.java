@@ -8,10 +8,10 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2018/6/12
- * creat_time: 9:44
+ * create_date: 2018/6/12
+ * create_time: 9:44
  * describe 给图片添加水印Util 如果图片过大可能导致 oom，建议配合提供的ImageUtil 压缩到指定大小后添加
  **/
 public class WaterMarkUtil {
@@ -56,7 +56,7 @@ public class WaterMarkUtil {
         //在画布上绘制水印图片
         canvas.drawBitmap(watermark, paddingLeft, paddingTop, null);
         // 保存
-        canvas.save(Canvas.ALL_SAVE_FLAG);
+        canvas.save();
         // 存储
         canvas.restore();
         return newb;

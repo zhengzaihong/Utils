@@ -5,10 +5,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 
 /**
- *creat_user: zhengzaihong
+ *create_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2018/12/3 0003
- *creat_time: 17:07
+ *create_date: 2018/12/3 0003
+ *create_time: 17:07
  *describe: Ui资源文件操作类
  **/
 public class UiCompat {

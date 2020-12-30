@@ -7,8 +7,9 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
-import android.support.v4.content.FileProvider;
 import android.util.Log;
+
+import androidx.core.content.FileProvider;
 
 import com.dz.utlis.bean.AppInfo;
 
@@ -17,10 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *creat_user: zhengzaihong
+ *create_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2018/12/25 0025
- *creat_time: 18:07
+ *create_date: 2018/12/25 0025
+ *create_time: 18:07
  *describe: apk相关操作
  **/
 

@@ -10,10 +10,10 @@ import android.widget.EditText;
 import static android.content.Context.INPUT_METHOD_SERVICE;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * email:1096877329@qq.com
- * creat_date: 2017/5/22 0022
- * creat_time: 16:56
+ * create_date: 2017/5/22 0022
+ * create_time: 16:56
  * describe: 打开或关闭软键盘
  **/
 

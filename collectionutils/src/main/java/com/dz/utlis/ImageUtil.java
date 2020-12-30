@@ -21,6 +21,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.view.View;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -34,10 +35,10 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2017/6/12
- * creat_time: 9:31
+ * create_date: 2017/6/12
+ * create_time: 9:31
  * describe 图片处理工具
  **/
 @SuppressWarnings("all")
@@ -60,6 +61,49 @@ public class ImageUtil {
             options -= 10;
         }
         return output.toByteArray();
+    }
+
+
+    /**
+     * 获取 指定view快照
+     *
+     * @param v 目标view
+     * @return bitmap
+     */
+
+    public static Bitmap getViewBitmap(View v) {
+
+        v.setDrawingCacheEnabled(true);
+        v.buildDrawingCache();
+        if (Build.VERSION.SDK_INT >= 11) {
+            v.measure(
+                    View.MeasureSpec.makeMeasureSpec(
+                            v.getWidth(),
+                            View.MeasureSpec.EXACTLY
+                    ), View.MeasureSpec.makeMeasureSpec(
+                            v.getHeight(), View.MeasureSpec.EXACTLY
+                    )
+            );
+            v.layout((int) v.getX(), (int) v.getY(),
+                    (int) (v.getX() + v.getMeasuredWidth()),
+                    (int) (v.getY() + v.getMeasuredHeight()));
+        } else {
+            v.measure(
+                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+            );
+            v.layout(0, 0, v.getMeasuredWidth(), v.getMeasuredHeight());
+        }
+        Bitmap b = Bitmap.createBitmap(
+                v.getDrawingCache(),
+                0,
+                0,
+                v.getMeasuredWidth(),
+                v.getMeasuredHeight()
+        );
+        v.setDrawingCacheEnabled(false);
+        v.destroyDrawingCache();
+        return b;
     }
 
 
@@ -157,6 +201,7 @@ public class ImageUtil {
 
     /**
      * 保存图片到图库
+     *
      * @param context
      * @param bmp
      * @param filePath
@@ -194,7 +239,7 @@ public class ImageUtil {
 
 
     public static int computeSampleSize(BitmapFactory.Options options,
-                                         int minSideLength, int maxNumOfPixels) {
+                                        int minSideLength, int maxNumOfPixels) {
         int initialSize = computeInitialSampleSize(options, minSideLength,
                 maxNumOfPixels);
 
@@ -322,6 +367,7 @@ public class ImageUtil {
 
     /**
      * 打开图库
+     *
      * @param context
      */
     public static void openSysAlbum(Context context) {
@@ -566,7 +612,7 @@ public class ImageUtil {
     }
 
     public static String getDataColumn(Context context, Uri uri, String selection,
-                                String[] selectionArgs) {
+                                       String[] selectionArgs) {
 
         Cursor cursor = null;
         final String column = "_data";

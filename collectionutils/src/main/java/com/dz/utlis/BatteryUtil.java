@@ -10,10 +10,10 @@ import com.dz.utlis.bean.Battery;
 import com.dz.utlis.interfaces.OnBatteryChangeListener;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * email:1096877329@qq.com
- * creat_date: 2018/5/27
- * creat_time: 2:19
+ * create_date: 2018/5/27
+ * create_time: 2:19
  * describe: 获取手机的电池信息
  **/
 

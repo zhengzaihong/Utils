@@ -5,11 +5,12 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import java.lang.ref.SoftReference;
 import java.lang.reflect.Field;
@@ -17,10 +18,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2019/11/21
- * creat_time: 9:56
+ * create_date: 2019/11/21
+ * create_time: 9:56
  * describe 项目 字体全部替换工具，只限 TextView以及子类。自定义View 不支持
  * <p>
  * <p>

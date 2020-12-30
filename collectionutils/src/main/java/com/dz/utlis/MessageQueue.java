@@ -7,10 +7,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * email:1096877329@qq.com
- * creat_date: 2019/6/14
- * creat_time: 16:27
+ * create_date: 2019/6/14
+ * create_time: 16:27
  * describe: 模拟消息队列实现一个固定大小的数据队列,超出自动去除第一位元素
  **/
 

@@ -15,10 +15,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- *creat_user: zhengzaihong
+ *create_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2017/5/22 0022
- *creat_time: 14:50
+ *create_date: 2017/5/22 0022
+ *create_time: 14:50
  *describe: 获得屏幕相关的辅助类
  **/
 
@@ -73,6 +73,7 @@ public class ScreenUtils
 	 */
 	public static void initScreen(Activity activity) {
 		if (isInitialize) return;
+
 		isInitialize = true;
 		Display display = activity.getWindowManager().getDefaultDisplay();
 		DisplayMetrics metric = new DisplayMetrics();

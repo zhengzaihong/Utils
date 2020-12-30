@@ -3,10 +3,10 @@ package com.dz.utlis;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- *creat_user: zhengzaihong
+ *create_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2018/5/27
- *creat_time: 2:47
+ *create_date: 2018/5/27
+ *create_time: 2:47
  *describe: id自动生成器
  **/
 

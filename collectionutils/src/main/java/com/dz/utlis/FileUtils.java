@@ -39,10 +39,10 @@ import java.util.Locale;
 import javax.net.ssl.HttpsURLConnection;
 
 /**
-* creat_user: zhengzaihong
+* create_user: zhengzaihong
 * Email:1096877329@qq.com
-* creat_date: 2018/5/25
-* creat_time: 16:31
+* create_date: 2018/5/25
+* create_time: 16:31
 * describe 常用文件处理
 **/
 @SuppressWarnings("all")

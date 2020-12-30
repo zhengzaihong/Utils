@@ -6,10 +6,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * email:1096877329@qq.com
- * creat_date: 2019/1/3 0003
- * creat_time: 14:10
+ * create_date: 2019/1/3 0003
+ * create_time: 14:10
  * describe: 简易bus
  **/
 

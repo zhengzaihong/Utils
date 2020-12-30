@@ -9,10 +9,10 @@ import java.util.Locale;
 
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2018/6/12
- * creat_time: 9:53
+ * create_date: 2018/6/12
+ * create_time: 9:53
  * describe 时间工具类
  **/
 @SuppressWarnings("all")

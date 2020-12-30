@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2019/12/30
- * creat_time: 14:07
+ * create_date: 2019/12/30
+ * create_time: 14:07
  * describe 字节处理工具
  **/
 @SuppressWarnings("all")

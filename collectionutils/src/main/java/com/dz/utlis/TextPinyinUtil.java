@@ -1,10 +1,10 @@
 package com.dz.utlis;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2018/5/25
- * creat_time: 11:40
+ * create_date: 2018/5/25
+ * create_time: 11:40
  * describe 拼音字符和ASCII码的映射关系
  **/
 public class TextPinyinUtil {

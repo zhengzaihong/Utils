@@ -19,10 +19,10 @@ import static com.dz.utlis.ToastTool.RadiusType.RIGHT_TOP_RADIUS;
 
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2019/11/20
- * creat_time: 16:42
+ * create_date: 2019/11/20
+ * create_time: 16:42
  * describe Toast的背景View 支持圆角
  **/
 public class RadiusRelativeLayout extends RelativeLayout {

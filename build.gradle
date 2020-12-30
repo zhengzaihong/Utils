@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.novoda:bintray-release:0.8.1'//添加
+        classpath 'com.novoda:bintray-release:0.9.1'//添加
         classpath 'com.android.tools.build:gradle:3.4.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
@@ -26,8 +26,8 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-//非常重要要不它不认识你的项目.kt文件名 其中airpurgeview是你的library名
-tasks.getByPath(":collectionutils:releaseAndroidJavadocs").enabled = false
+//非常重要要不它不认识你的项目.kt文件名
+//tasks.getByPath(":collectionutils:releaseAndroidJavadocs").enabled = false
 /*
 语法
 tasks.getByPath(":需要升级的module:bintrayUpload").enabled = true

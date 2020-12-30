@@ -43,10 +43,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2016/5/21
- * creat_time: 11:35
+ * create_date: 2016/5/21
+ * create_time: 11:35
  * describe
  **/
 @SuppressWarnings("all")

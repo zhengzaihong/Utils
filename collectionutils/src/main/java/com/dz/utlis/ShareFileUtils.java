@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2019/11/20
- * creat_time: 11:26
+ * create_date: 2019/11/20
+ * create_time: 11:26
  * describe 系统分享功能
  * 使用该工具 请先初始化 ToastTool 工具，或者禁用 ToastTool提示
  **/

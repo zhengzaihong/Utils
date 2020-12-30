@@ -19,10 +19,10 @@ import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2019/11/20
- * creat_time: 19:06
+ * create_date: 2019/11/20
+ * create_time: 19:06
  * describe 文件压缩
  **/
 public final class ZipUtils {
@@ -30,7 +30,7 @@ public final class ZipUtils {
     private static final int BUFFER_LEN = 8192;
 
     private ZipUtils() {
-        throw new UnsupportedOperationException("u can't instantiate me...");
+        throw new UnsupportedOperationException("you can't instantiate me...");
     }
 
     /**

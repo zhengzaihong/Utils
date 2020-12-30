@@ -3,10 +3,10 @@ package com.dz.utlis.bean;
 import java.io.Serializable;
 
 /**
- *creat_user: zhengzaihong
+ *create_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2018/5/27
- *creat_time: 12:09
+ *create_date: 2018/5/27
+ *create_time: 12:09
  *describe: TODO
  **/
 public class StorageInfo implements Serializable {

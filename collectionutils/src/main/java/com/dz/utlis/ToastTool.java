@@ -9,10 +9,10 @@ import android.widget.Toast;
 import com.dz.utlis.view.RadiusRelativeLayout;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2019/11/20
- * creat_time: 16:58
+ * create_date: 2019/11/20
+ * create_time: 16:58
  * describe 吐司工具，使用前一定的先初始化，
  * 初始化 Toast 放在 application 或者启动页
  *

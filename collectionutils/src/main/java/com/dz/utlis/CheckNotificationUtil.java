@@ -1,5 +1,6 @@
 package com.dz.utlis;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AppOpsManager;
 import android.app.NotificationManager;
@@ -9,17 +10,18 @@ import android.content.pm.ApplicationInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
-import android.support.annotation.RequiresApi;
+
+import androidx.annotation.RequiresApi;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * email:1096877329@qq.com
- * creat_date: 2019/5/15 0015
- * creat_time: 13:51
+ * create_date: 2019/5/15 0015
+ * create_time: 13:51
  * describe: 检查是否有通知权限
  **/
 
@@ -76,6 +78,7 @@ public class CheckNotificationUtil {
      * @param context
      * @return
      */
+    @SuppressLint("NewApi")
     public static boolean isNotificationEnabled(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             return isEnableV26(context);

@@ -7,21 +7,23 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.util.SparseArray;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * email:1096877329@qq.com
- * creat_date: 2019/1/3 0003
- * creat_time: 10:52
+ * create_date: 2019/1/3 0003
+ * create_time: 10:52
  * describe: android 运行时权限工具
  **/
 @SuppressWarnings("all")
@@ -35,8 +37,10 @@ public class PermissionUtils {
     private static SparseArray<CallBackListener> mPermissions = new SparseArray<>();
 
 
-    private String sureText = "sure";
-    private String cancleText = "cancle";
+    private String sureText = "确定";
+    private String cancleText = "取消";
+    private int sureTextColor = Color.BLUE;
+    private int cancleTextColor = Color.BLACK;
 
 
     private PermissionUtils() {
@@ -128,8 +132,7 @@ public class PermissionUtils {
             return;
         }
         mActivity = activity;
-        sureText = mActivity.getResources().getString(R.string.sure_button);
-        cancleText = mActivity.getResources().getString(R.string.cancle_button);
+
         if (Build.VERSION.SDK_INT < 23) {
             runnable.onResult(true);
             return;
@@ -182,6 +185,9 @@ public class PermissionUtils {
                             runnable.onResult(false);
                         }
                     }).create();
+
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(sureTextColor);
+            dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(cancleTextColor);
             dialog.show();
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -200,6 +206,11 @@ public class PermissionUtils {
         return this;
     }
 
+    public PermissionUtils setSureAndCancleTextColor(int sureTextColor,int cancleTextColor) {
+        this.sureTextColor = sureTextColor;
+        this.cancleTextColor = cancleTextColor;
+        return this;
+    }
     interface GrantedResult {
 
         void onResult(boolean granted);

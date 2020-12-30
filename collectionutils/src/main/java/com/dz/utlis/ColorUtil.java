@@ -5,10 +5,10 @@ import android.graphics.Color;
 import java.util.Random;
 
 /**
-* creat_user: zhengzaihong
+* create_user: zhengzaihong
 * Email:1096877329@qq.com
-* creat_date: 2018/5/23
-* creat_time: 14:17
+* create_date: 2018/5/23
+* create_time: 14:17
 * describe 颜色处理类
 **/
 public class ColorUtil {

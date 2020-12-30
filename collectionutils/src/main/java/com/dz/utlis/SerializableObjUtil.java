@@ -7,10 +7,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- *creat_user: zhengzaihong
+ *create_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2018/5/27
- *creat_time: 12:07
+ *create_date: 2018/5/27
+ *create_time: 12:07
  *describe: Serializable对象处理类
  **/
 public class SerializableObjUtil {

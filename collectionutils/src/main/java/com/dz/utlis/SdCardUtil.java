@@ -7,8 +7,9 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
 import android.os.storage.StorageManager;
-import android.support.annotation.RequiresApi;
 
+
+import androidx.annotation.RequiresApi;
 
 import com.dz.utlis.bean.StorageInfo;
 
@@ -19,10 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *creat_user: zhengzaihong
+ *create_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2018/5/27
- *creat_time: 2:10
+ *create_date: 2018/5/27
+ *create_time: 2:10
  *describe: 手机sdcard
  **/
 public class SdCardUtil {

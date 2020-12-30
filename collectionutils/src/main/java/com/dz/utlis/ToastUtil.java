@@ -7,10 +7,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2018/5/21
- * creat_time: 13:35
+ * create_date: 2018/5/21
+ * create_time: 13:35
  * describe 花式Toast
  **/
 public class ToastUtil {

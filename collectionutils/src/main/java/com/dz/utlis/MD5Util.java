@@ -8,10 +8,10 @@ import java.nio.channels.FileChannel;
 import java.security.MessageDigest;
 
 /**
- *creat_user: zhengzaihong
+ *create_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2018/5/27
- *creat_time: 12:15
+ *create_date: 2018/5/27
+ *create_time: 12:15
  *describe: MD5Util
  **/
 

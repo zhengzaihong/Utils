@@ -3,10 +3,10 @@ package com.dz.utlis;
 import java.io.UnsupportedEncodingException;
 
 /**
- *creat_user: zhengzaihong
+ *create_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2019/5/22 0022
- *creat_time: 14:48
+ *create_date: 2019/5/22 0022
+ *create_time: 14:48
  *describe: 格式转换
  **/
 

@@ -3,7 +3,7 @@ package utils.zzh.com.utils
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.dz.utlis.*
 import kotlinx.android.synthetic.main.activity_main.*
 

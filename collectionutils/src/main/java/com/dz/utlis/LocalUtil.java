@@ -6,10 +6,10 @@ import android.os.Environment;
 import java.io.File;
 
 /**
-* creat_user: zhengzaihong 
+* create_user: zhengzaihong 
 * Email:1096877329@qq.com
-* creat_date: 2016/3/26
-* creat_time: 15:49
+* create_date: 2016/3/26
+* create_time: 15:49
 * describe 当前系统缓存获取
 **/
 public class LocalUtil {

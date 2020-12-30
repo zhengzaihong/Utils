@@ -7,10 +7,10 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
 /**
- *creat_user: zhengzaihong
+ *create_user: zhengzaihong
  *email:1096877329@qq.com
- *creat_date: 2018/5/27
- *creat_time: 2:46
+ *create_date: 2018/5/27
+ *create_time: 2:46
  *describe: 网络状态判断
  **/
 

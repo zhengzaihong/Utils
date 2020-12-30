@@ -36,10 +36,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-* creat_user: zhengzaihong
+* create_user: zhengzaihong
 * Email:1096877329@qq.com
-* creat_date: 2017/6/12
-* creat_time: 9:33
+* create_date: 2017/6/12
+* create_time: 9:33
 * describe Io处理类
 **/
 

@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * Email:1096877329@qq.com
- * creat_date: 2016/10/24
- * creat_time: 11:53
+ * create_date: 2016/10/24
+ * create_time: 11:53
  * describe app 中关于act的操作
  **/
 public class ClassTools {

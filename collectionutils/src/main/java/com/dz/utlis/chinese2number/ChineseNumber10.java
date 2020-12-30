@@ -3,10 +3,10 @@ package com.dz.utlis.chinese2number;
 import android.text.TextUtils;
 
 /**
- * creat_user: zhengzaihong
+ * create_user: zhengzaihong
  * eamil:1096877329@qq.com
- * creat_date: 2019/5/22 0022
- * creat_time: 11:06
+ * create_date: 2019/5/22 0022
+ * create_time: 11:06
  * describe: 十|拾 汉字转成 阿拉伯数字
  **/
 public class ChineseNumber10 {
