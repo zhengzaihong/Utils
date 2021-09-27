@@ -7,7 +7,7 @@
 依赖地址(已迁移jitpack)：
 
 
-   implementation 'com.zzh:zhengzaihong:Utils'     
+ implementation 'com.github.zhengzaihong:Utils:1.0.1'    
    
 
 
