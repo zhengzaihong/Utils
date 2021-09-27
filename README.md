@@ -4,12 +4,12 @@
 
 
 
-依赖地址：
+依赖地址(已迁移jitpack)：
 
 
-   implementation 'com.zzh:rjtools:xx.xx.xx'     
+   implementation 'com.zzh:zhengzaihong:Utils'     
    
- 注意修改版本号,version_1.0.8即填写1.0.8
+
 
 
 例:应用请求权限处理，这里用kotlin演示，java同学放心使用
@@ -58,6 +58,7 @@ requestPermission方法参数介绍：
 
         PermissionUtils.getInstance().onRequestPermissionsResult(requestCode, permissions, grantResults, true)
     }
+
 
 复写onRequestPermissionsResult 方法，调用PermissionUtils中的onRequestPermissionsResult方法，最后一个参数传入true 则会在CallBackListener的notAskPermission方法中进行返回是否需要跳转。不跳转可以不传或者false。当然该工具类不止这些。
 
