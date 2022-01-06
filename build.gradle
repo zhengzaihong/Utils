@@ -26,9 +26,4 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-//非常重要要不它不认识你的项目.kt文件名
-//tasks.getByPath(":collectionutils:releaseAndroidJavadocs").enabled = false
-/*
-语法
-tasks.getByPath(":需要升级的module:bintrayUpload").enabled = true
-tasks.getByPath(":不需要升级的module:bintrayUpload").enabled = false*/
+
